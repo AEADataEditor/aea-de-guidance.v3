@@ -114,7 +114,7 @@ To fill out the required metadata elements **Subject Terms**, **JEL Classificati
       - data type(s)
   - Most fields are repeatable, please enter as many values as needed. For instance, if subsets of the data cover different periods (e.g., `1999-2019` and `2004-2019`). Just click "add value" next to the time period field for each time period.
   - This information can also be provided when only code is made available.
-  - When only code is produced, authors should choose `data type = program source code`: ![program source code](../../images/project-data-type-icpsr.png)
+  - When only code is produced, authors should choose `data type = program source code`: ![program source code](/images/project-data-type-icpsr.png)
 
 #### Methodology section
 
