@@ -29,19 +29,16 @@ In some cases, the [openICPSR helpdesk](https://www.openicpsr.org/openicpsr/cont
 
 [![Start deposit](/images/icpsr-start-your-deposit-v2.png)](https://www.openicpsr.org/openicpsr/workspace?create=true&archive=aea)
 
-
-
-Go to the [AEA Data and Code Repository](https://www.icpsr.umich.edu/sites/aea/home), and start the process. 
+1. Go to the [AEA Data and Code Repository](https://www.icpsr.umich.edu/sites/aea/home), and start the process. 
 Once there, click on the "Share Data" link:
 
 [![Start process](/images/icpsr-start-process-share-data-v2.png)](https://www.icpsr.umich.edu/sites/aea/home)
 
-You will be taken to a page explaining some of the technical details. Click on the "[Start Your deposit](https://www.openicpsr.org/openicpsr/workspace?create=true&archive=aea)" button to initiate the deposit process itself. 
+2. You will be taken to a page explaining some of the technical details. Click on the "[Start Your deposit](https://www.openicpsr.org/openicpsr/workspace?create=true&archive=aea)" button to initiate the deposit process itself. 
 
 
 ---
-
-### Checklist for Metadata
+````{dropdown} **Checklist for Metadata**
 
 #### Required
 
@@ -75,15 +72,13 @@ You will be taken to a page explaining some of the technical details. Click on t
 - [ ] Units of Observation 
 - [ ] Any additional metadata elements
 
----
-
 Start by providing the metadata (descriptors) for the data and code you are uploading.
 
+````
 
-### Details on Filling Out Metadata
+`````{dropdown}**Details on Filling Out Metadata**
 
-
-#### Describe the project
+````{dropdown} Describe the project
 
 ![screenshot of project description](/images/project-description-icpsr.png)
 
@@ -91,9 +86,9 @@ Start by providing the metadata (descriptors) for the data and code you are uplo
   - The **authors** should be those who compiled the data and code. The names, and order of the names, may differ (if necessary) from the article. 
   - The **summary** might be short. It should always be informative. It can include the **abstract** of the article itself. It should not include information on the related article (which has its own field). If data is included, the summary/abstract should describe the data. 
   - Identify any **funding sources** here - the information can be queried by some funders, and can assist with your award reporting.
+````
 
-
-#### Scope of project section
+````{dropdown} Scope of project section
 
 To fill out the required metadata elements **Subject Terms**, **JEL Classification**, and **Manuscript Number**, open the "Scope of Project" section:
 
@@ -115,8 +110,9 @@ To fill out the required metadata elements **Subject Terms**, **JEL Classificati
   - Most fields are repeatable, please enter as many values as needed. For instance, if subsets of the data cover different periods (e.g., `1999-2019` and `2004-2019`). Just click "add value" next to the time period field for each time period.
   - This information can also be provided when only code is made available.
   - When only code is produced, authors should choose `data type = program source code`: ![program source code](/images/project-data-type-icpsr.png)
+````
 
-#### Methodology section
+````{dropdown} Methodology section
 
   ![methodology section](/images/project-methodology-icpsr.png)
   
@@ -133,16 +129,15 @@ To fill out the required metadata elements **Subject Terms**, **JEL Classificati
 - Authors are encouraged to link back to **working papers** or related publications that have or will use this (same!) data. 
 - If code is derived from or continues to be updated on a Git repository (**Github, Gitlab, Bitbucket**, etc.), authors can link to it here.
 - Future functionality will automatically list articles (including articles by third parties) that cite the data.
+````
 
+`````
 
-
-### Uploading
+````{dropdown}**Uploading**
 
 Once the metadata is completed, authors can upload files. 
 
 Upload files in the way you expect the files to be organized in order to run the code. 
-
----
 
 #### Checklist for Uploading
 
@@ -153,9 +148,9 @@ Upload files in the way you expect the files to be organized in order to run the
 - [ ] Do not upload data that you do not have the rights to publish! (This includes PII that is not authorized by your IRB)
 - [ ] Do not upload confidential data!
 
----
+````
 
-### Some caveats and tips
+````{dropdown}**Some important caveats and tips**
 
 #### Importing ZIP files
 
@@ -197,40 +192,13 @@ We said it above:
 > - See the "[Depositing Data for the Greater Good](https://social-science-data-editors.github.io/guidance/sample-depositing-data-for-greater-good.html)" page at the Social Science Data Editors website.
 > - Consult the [Accessing Restricted Data Through openICPSR](https://www.openicpsr.org/openicpsr/accessRD) page about the process at openICPSR, but other repositories may be acceptable.
 
-**TL;DR version:**
-
-- [ ] Choose where to upload any restricted data (but not HERE)
-- [ ] If you are able to provide the data to the Data Editor, select the appropriate checkbox on the [DCAF](https://www.aeaweb.org/journals/forms/data-code-availability) but **DO NOT** upload the data here (even temporarily). You will be sent a secure upload form.
-- [ ] Be sure to answer the [Submission questions](#submission-questions) with respect to the data that you **have** deposited, not data withheld or deposited elsewhere
-- [ ] proceed as usual as outlined below
-
-#### Tips
-
 - Please upload the README (in PDF or TXT) as the very first file - ensuring that it can be found easily by browsers of the archive.
   - It is OK to upload Markdown or Word documents in addition to, but not instead of the PDF or TXT version
 - Please upload the README to the root of the repository - any data and code can be in subdirectories, but it is easier to find the README if it is not in subdirectories.
   - There should be no duplicate README files in the repository
+````
 
-#### Ideal structure
-
-Your deposit should have
-
-- [ ] no redundant directories: the first thing you should see is the README and any subdirectories
-- [ ] there should be no ZIP files!
-- [ ] the structure should be as you last ran the code
-
-> [NOTE] The AEA staff will not re-arrange or otherwise restructure your deposit in any way. What you see in the deposit interface is what others will see once it is published.
-
-You should see something like this:
-```
-data_directory/
-prog_directory/
-README.pdf
-LICENSE.txt
-```
-(the `LICENSE.txt` is optional if you want to adopt one of the standard openICPSR licenses upon publication. See [our licensing guidance](Licensing_guidance) for other options).
-
-### Submitting to the Data Editor
+````{dropdown}**Submitting to the Data Editor**
 
 Once you are satisfied that all (publishable) data files are present, are complete, and all metadata is satisfactory, including all required elements filled out, you should **submit** the deposit, by changing the **status** of the deposit:
 
@@ -274,9 +242,9 @@ You should choose a license from the drop-down menu, or, if you have a custom li
 #### Finalizing
 
 Press "submit." Should you have forgotten something, you can "recall" the submission, fix the issue, and re-submit. 
+````
 
-
-### Citing Your Deposit
+````{dropdown}**Citing Your Deposit**
 
 At present (2020), the openICPSR repository does not display the Digital Object Identifier (DOI) that will be associated with your deposit. However, it can be deduced easily.
 
@@ -301,7 +269,39 @@ At present (2020), the openICPSR repository does not display the Digital Object 
 
 {% include deposit-doi.html %}
 
+````
+
 ### Ready to submit manuscript
 
 Once you have completed the deposit, you are now ready to submit the manuscript native files, together with the [Data and Code Availability Form](https://www.aeaweb.org/journals/forms/data-code-availability), as per the journal's guidelines ([AER guidelines here](https://www.aeaweb.org/journals/aer/submissions/accepted-articles/styleguide)).
+
+**TL;DR version:**
+
+- [ ] Choose where to upload any restricted data (but not HERE)
+- [ ] If you are able to provide the data to the Data Editor, select the appropriate checkbox on the [DCAF](https://www.aeaweb.org/journals/forms/data-code-availability) but **DO NOT** upload the data here (even temporarily). You will be sent a secure upload form.
+- [ ] Be sure to answer the [Submission questions](#submission-questions) with respect to the data that you **have** deposited, not data withheld or deposited elsewhere
+- [ ] proceed as usual as outlined below
+
+
+#### Ideal structure
+
+Your deposit should have
+
+- [ ] no redundant directories: the first thing you should see is the README and any subdirectories
+- [ ] there should be no ZIP files!
+- [ ] the structure should be as you last ran the code
+
+> [NOTE] The AEA staff will not re-arrange or otherwise restructure your deposit in any way. What you see in the deposit interface is what others will see once it is published.
+
+You should see something like this:
+```
+data_directory/
+prog_directory/
+README.pdf
+LICENSE.txt
+```
+(the `LICENSE.txt` is optional if you want to adopt one of the standard openICPSR licenses upon publication. See [our licensing guidance](Licensing_guidance) for other options).
+
+````
+
 

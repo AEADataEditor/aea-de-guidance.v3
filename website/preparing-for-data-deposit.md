@@ -20,8 +20,7 @@ compatible with DCAS.
 > - Treat the replication package as one of the methods to convey the methods that lead to your manuscript's conclusions. Consider it a teaching tool, targeting young graduate students who may not be in your field.
 
 
-### Describing the contents of your replication package
-
+````{dropdown} **Describing the contents of your replication package with a README**
 Every replication package requires a document outlining where the data comes from, what data is provided, what requirements are needed to run the code in the replication package, how to run the code, what results to expect, and where to find the results. This is conventionally called the "README". 
 
 - The AEA requires that the README contain a number of information elements.  A convenient way to ensure that these elements are present is to use the [template README for social science replication packages v1.1](https://social-science-data-editors.github.io/template_README/); however, you are free to provide this information in a format of your choice as well.
@@ -34,21 +33,21 @@ Every replication package requires a document outlining where the data comes fro
 
 The following information is **required** in the README (unless a modifier indicates otherwise):
 
-- [ ] Data Availability and Provenance Statements
+- [ ] [Data Availability and Provenance Statements](https://social-science-data-editors.github.io/template_README/template-README.html#data-availability-and-provenance-statements)
   - [ ] Statement about Rights
   - [ ] License for Data (optional, but recommended)
   - [ ] Details on each Data Source
-- [ ] Dataset list
-- [ ] Computational requirements
+- [ ] [Dataset list](https://social-science-data-editors.github.io/template_README/template-README.html#dataset-list)
+- [ ] [Computational requirements](https://social-science-data-editors.github.io/template_README/template-README.html#computational-requirements)
   - [ ] Software Requirements
   - [ ] Controlled Randomness (as necessary)
   - [ ] Memory, Runtime, and Storage Requirements
-- [ ] Description of programs/code
+- [ ] [Description of programs/code](https://social-science-data-editors.github.io/template_README/template-README.html#description-ofprogramscode)
   - [ ] License for Code (Optional, but recommended) 
-- [ ] Instructions to Replicators
+- [ ] [Instructions to Replicators](https://social-science-data-editors.github.io/template_README/template-README.html#instructions-to-replicators)
   - [ ] Details (as necessary)
-- [ ] List of tables and programs
-- [ ] References (Optional, but recommended) 
+- [ ] [List of tables and programs](https://social-science-data-editors.github.io/template_README/template-README.html#list-of-tables-and-programs)
+- [ ] [References (Optional, but recommended)](https://social-science-data-editors.github.io/template_README/template-README.html#references)
 
 Some more information is provided below, a full discussion is available at the [template README for social science replication packages](https://social-science-data-editors.github.io/template_README/).
 
@@ -56,8 +55,9 @@ The README should be in a format that is easily readable online, such as a PDF o
 
 Provide the README as part of your replication package, **ideally in the root directory.**
 <div style="page-break-after: always;"></div>
+````
 
-### Data Citations
+````{dropdown} **Data Citations**
 
 All manuscripts will be checked for data citations. If you have not done so, now is the time to add them to your
 manuscript. 
@@ -87,8 +87,9 @@ In many cases, the data citation for a public-use dataset has a unique URL that 
 > Bureau of Labor Statistics. 2000–2010. “Current Employment Statistics: Colorado, Total Nonfarm, Seasonally adjusted - SMS08000000000000001.” *United States Department of Labor*. http://data.bls.gov/cgi-bin/surveymost?sm+08 (accessed February 9, 2011).
 
 However, in many other cases where the URL does not lead directly to the dataset, a separate "Data Availability Statement" needs to be provided, as part of the README. A simple data citation may not sufficient. See [general guidance on data availability statements](https://social-science-data-editors.github.io/guidance/Requested_information_dcas.html), and [some examples in the template README](https://social-science-data-editors.github.io/template_README/template-README.html#data-availability-and-provenance-statements).
+````
 
-### Code
+````{dropdown}**Code**
 
 It should be obvious that your replication package should contain all code used to generate the results in your manuscript.
 
@@ -125,9 +126,9 @@ The replication package should reproduce the tables and figures, as well as any 
 > The only exception to this rule is a single change to set a small number of program and data directory paths.
 
 While running a small number of distinct programs separately  is acceptable (in some cases even desirable), it is **not acceptable** to require replicators to manually enter numbers, or configure parameter files, in order to reproduce the tables and figures in the paper. Nevertheless, it should be clear from the manuscript and the code how a replicator might deviate from the tables and figures in the paper. 
+````
 
-
-### Data structure of a replication package
+````{dropdown}**Data structure of a replication package**
 
 The AEA uses the openICPSR platform for replication packages. The platform allows users to download complete "deposits", or only subdirectories thereof. However, deposits of replication packages at other trusted repositories are also accepted, as long as they satisfy the requirements described here.
 
@@ -240,9 +241,25 @@ In situations where the data has a different license, or where the data you incl
  - [Guidelines for depositing at other repositories](guidelines-other-repositories)
  - [Special case: PSID](https://www.aeaweb.org/journals/data/faq#psid)
  - [Special case: confidential data](https://social-science-data-editors.github.io/guidance/Requested_information_hosting.html#challenges-in-hosting-of-data-and-code-at-restricted-access-data-centers)
+````
 
+````{dropdown}**Choosing a license**
 
-#### Considering the replicator
+By default, the openICPSR deposit attributes a [Creative Commons Attribution 4.0 International Public License](http://creativecommons.org/licenses/by/4.0/) to your deposit, but you can choose a different license. If you do, you must add a file called "LICENSE.txt" (by convention capitalized) to the deposit. 
+
+- See our [Licensing guidance](Licensing_guidance) for more details.
+````
+
+````{dropdown}**Preparing to upload**
+
+Once you are done preparing your replication package, you should upload it:
+
+- if you have received a conditional acceptance, your replication  package **must** be in a trusted repository. The default trusted repository is the [AEA Data and Code Repository](https://www.openicpsr.org/openicpsr/search/aea/studies). Other trusted repositories may be acceptable (see [list](https://social-science-data-editors.github.io/guidance/Requested_information_hosting.html#trusted-repositories)), but replication packages should meet the [display guidelines](guidelines-other-repositories). 
+- if you have confidential data that you want to transmit to the AEA Data Editor but do not want published, communicate with the AEA Data Editor directly (see [this FAQ](https://www.aeaweb.org/journals/data/faq#restricted) and [Sharing restricted-access data with the AEA Data Editor](sharing-restricted-data)).
+- if you have received instructions during the revise-and-resubmit process to have a reproducibility check conducted, you may use the AEA Data and Code Repository, but other methods are also acceptable. Do not forget, however, that once the paper is accepted, it **must** be made available on a trusted repository - other methods are then no longer acceptable.
+````
+
+### Considering the replicator
 
 The replicator of your package is likely to be less qualified than you are. After all, you are publishing something novel.
 
@@ -280,26 +297,12 @@ For less frequently used software, provide a URL where the software can be obtai
   - if using commercial compilers, we also suggest to compile your code using open-source or free compilers (including any free performance packages, such as Intel MKL), even if the resulting code is not the most efficient.
   - as of 2021, the AEA Data Editor has access to the software on [this list](https://socialsciences.cornell.edu/computing-and-data/software), and any open-source (free) software that can be installed on Windows, Linux, and macOS.
 
-### Choosing a license
-
-By default, the openICPSR deposit attributes a [Creative Commons Attribution 4.0 International Public License](http://creativecommons.org/licenses/by/4.0/) to your deposit, but you can choose a different license. If you do, you must add a file called "LICENSE.txt" (by convention capitalized) to the deposit. 
-
-- See our [Licensing guidance](Licensing_guidance) for more details.
-
 
 ### Re-run your replication package
 
 Ideally, once you have prepared your replication package, **you should re-run the code again**, in a clean environment, possibly a fresh computer, to ensure that (a) the package is, in fact, reproducible with minimal interaction (b) the results are numerically identical. 
 
 - Wherever possible, we strongly encourage running in batch (non-interactive) mode.
-
-### Preparing to upload
-
-Once you are done preparing your replication package, you should upload it:
-
-- if you have received a conditional acceptance, your replication  package **must** be in a trusted repository. The default trusted repository is the [AEA Data and Code Repository](https://www.openicpsr.org/openicpsr/search/aea/studies). Other trusted repositories may be acceptable (see [list](https://social-science-data-editors.github.io/guidance/Requested_information_hosting.html#trusted-repositories)), but replication packages should meet the [display guidelines](guidelines-other-repositories). 
-- if you have confidential data that you want to transmit to the AEA Data Editor but do not want published, communicate with the AEA Data Editor directly (see [this FAQ](https://www.aeaweb.org/journals/data/faq#restricted) and [Sharing restricted-access data with the AEA Data Editor](sharing-restricted-data)).
-- if you have received instructions during the revise-and-resubmit process to have a reproducibility check conducted, you may use the AEA Data and Code Repository, but other methods are also acceptable. Do not forget, however, that once the paper is accepted, it **must** be made available on a trusted repository - other methods are then no longer acceptable.
 
 ### Final checklist
 
