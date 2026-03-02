@@ -8,7 +8,7 @@ layout: single
 
 ## Citing, DOI
 
-### What is the DOI of my openICPSR deposit? I have not yet published it, but am asked to add a citation to it in my manuscript?
+````{dropdown}**What is the DOI of my openICPSR deposit? I have not yet published it, but am asked to add a citation to it in my manuscript?**
 
  Generically, each openICPSR project has a number (e.g., "109622"), that might show up on the right panel:
  ![Image of number](/images/project-number.png) 
@@ -21,17 +21,17 @@ Give it a try:
 
 
 {% include deposit-doi.html %}
+````
 
-
-### How do I cite my own data and code supplement?
+````{dropdown}**How do I cite my own data and code supplement?**
 
 If you created your own data (experiments, surveys, etc.), you should do one of two things:
 
 - If you believe that you will re-use the data as-is, and in particular if you would like others to also use the data, we strongly suggest creating a separate data deposit at a data repository (see [this guidance at the Social Science Data Editor website](https://social-science-data-editors.github.io/guidance/sample-depositing-data-for-greater-good.html). This deposit does not need to be at the AEA Data and Code Repository - it can be at any trusted repository. Have a look at the [Social Science Data Editor's guide to Data and Code Hosting](https://social-science-data-editors.github.io/guidance/Requested_information_hosting.html). Once deposited, and published, the data should be cited in your manuscript, in accordance with the [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references).
 - If you only intend to write this one manuscript with the data, you should cite the manuscript's companion data and code deposit at the AEA Data and Code repository. Since that deposit is (typically) not yet published, you need to manually construct the reference, as per the [AEA Sample References](https://www.aeaweb.org/journals/policies/sample-references) (an example is given there). The DOI for your forthcoming data and code deposit can be constructed as outlined in the previous FAQ.
+````
 
-
-### I have a paper that uses data from 14 different sources. How do I comply with requirement for data citations and fit within page limits? (for instance in Papers and Proceedings).
+````{dropdown}**I have a paper that uses data from 14 different sources. How do I comply with requirement for data citations and fit within page limits? (for instance in Papers and Proceedings).**
 
 We understand  page limits, here are possible workarounds, in decreasing order of preference: 
 
@@ -40,29 +40,32 @@ We understand  page limits, here are possible workarounds, in decreasing order o
 - refer to the README in the deposit, which has a bibliography like a real paper (see the [README template](https://social-science-data-editors.github.io/template_README/)).
 
 Note that citing the sources is a formal requirement. You may still want to provide a table with a more compact list of links or series identifiers, for quick reference or machine-readability.
+````
 
 ## Licensing
 
-### Are authors allowed to reuse the data once the data is published on the AER webpage and what are the specific conditions? 
+````{dropdown}**Are authors allowed to reuse the data once the data is published on the AER webpage and what are the specific conditions?**
 
 As of Jan 2021, this question has two answers, pending final migration of archival replication packages:
+````
 
-####  If the deposit is still downloaded from the AEA website (download URL starts with "https://www.aeaweb.org")
+````{dropdown}**If the deposit is still downloaded from the AEA website (download URL starts with "https://www.aeaweb.org")**
 
 The copyright of older deposits was transferred (&copy; AEA), together with the manuscript, to the AEA. However, we encourage re-use, and permission is automatically granted to any user of these deposits to use and re-publish them, under acknowledgement (citation) of the *authors* original paper and replication package. See  [sample references](https://www.aeaweb.org/journals/policies/sample-references), example no. 4.
+````
 
-####  If the deposit is downloaded from the AEA Data and Code Repository at openICPSR (download link redirects to a page at the Repository)
+````{dropdown}**If the deposit is downloaded from the AEA Data and Code Repository at openICPSR (download link redirects to a page at the Repository)**
 
 Migrated deposits are (&copy; AEA), newer deposits remain copyrighted by the original authors (unless otherwise stated in the deposit's LICENSE file). Most deposits are under a [mixed CC-BY/BSD](/aea-de-guidance/LICENSE-template.html) license, or under a [CC-BY](https://creativecommons.org/licenses/by/4.0/) license. 
 
 ![License on openICPSR website](/images/project-license-icpsr.png)
 
 Both licenses allow for re-use and re-distribution, under acknowledgement (citation) of the DOI of the replication package, see  [sample references](https://www.aeaweb.org/journals/policies/sample-references), example no. 3.
-
+````
 
 ## Deposit related
 
-###  Should we keep the data and directory structure as we used it ourselves or should we set up the files in a way that would make replication as straightforward as possible?
+````{dropdown}**Should we keep the data and directory structure as we used it ourselves or should we set up the files in a way that would make replication as straightforward as possible?**
 
 > ... the directory structure has gotten a little clunky over the years working on this project...
 
@@ -73,12 +76,13 @@ The Data and Code Availability Policy   says:
 You should feel free to reorganize, but you should ensure when we run the reorganized files, they produce the **same results that are reported in the paper**. Or put differently, the numbers in the paper should be produced by the reorganized files. We are not trying to reproduce your historical path to the paper, only the current state of the paper.
 
 Such restructuring may also be appropriate if you have a very sophisticated reproducible setup in your lab or group. A replicator does not need all sorts of fancy dynamic setup scripts that are very relevant in a lab, but unnecessarily complicate the process for a replicator. You should attempt to simplify the final setup to make it easy for anybody to run this particular project, once.
+````
 
-### I was asked to modify files in my repository (not yet published) but I cannot upload or edit anything
+````{dropdown}**I was asked to modify files in my repository (not yet published) but I cannot upload or edit anything**
 
 When you first submitted to the AEA, your deposit became locked. There are two ways it can be edited:
 
-####  You can "recall" the submission
+**You can "recall" the submission**
 
 On the right, under " Change status", choose "Recall submission"
 
@@ -88,13 +92,14 @@ You should then be able to upload and make changes.
 
 Once you are done, choose "[Re-submit](data-deposit-aea.html#submitting-to-the-data-editor)" from the same menu.
 
-####  The Data Editor staff can request revisions
+**The Data Editor staff can request revisions**
 
 If you received a notice via the openICPSR communication log requesting revisions, you should be able to make modifications as outlined in the request. You should be all set.
 
 Again, once you are done, choose "[Re-submit](data-deposit-aea.html#submitting-to-the-data-editor)" from the same menu as above.
+````
 
-### I was wondering whether (and how) I can update the published repository for our paper. I was contacted by a researcher who is doing a replication ... couple of minor issues ... forgotten to include two auxiliary datasets in the repository without which one of the programs does not run successfully.
+````{dropdown}**I was wondering whether (and how) I can update the published repository for our paper. I was contacted by a researcher who is doing a replication ... couple of minor issues ... forgotten to include two auxiliary datasets in the repository without which one of the programs does not run successfully.**
 
 First off, excellent initiative. Our team cannot always conduct a full replication (not all data may be accessible, not enough time, no access to the software). We appreciate it when others are able to do that work, and when authors then correct the replication package.
 
@@ -124,8 +129,9 @@ Updating the repository is actually very easy, and updates likes these are exact
 6) In most cases, the article will remain linked to the V1 deposit ("version of record"), but anybody navigating there will see a banner indicating that a more recent version exists (the V2 deposit).
 
 ![Banner for V2](/images/icpsr-version2-banner.png)
+````
 
-### I am trying to upload to the repository, but my replication package has more than 1,000 files
+````{dropdown}**I am trying to upload to the repository, but my replication package has more than 1,000 files**
 
 As of 2021, the 1,000 file limit is unfortunately a hard limit. Therefore, we relax the rule that all data and code should be unzipped, though we still insist on the "smallest possible configuration".
 
@@ -159,8 +165,9 @@ Alternatively, the code can handle the unzipping - optional, but more robust.
 Once you've adjusted that, zip up the whole structure (so a ZIP file that has inside it another zip file, plus the `/code`, `/data/src1/`, and `/data/src2/` directories), and "Import from ZIP" when uploading to ICPSR.
 
 For an example on how to document this in your repository, see [this file](https://doi.org/10.3886/E125381V1-101422). You can incorporate such text into a separate file, into the README (preferred), or adjust your code to take this structure into account (much preferred).
+````
 
-### What is that __MACOSX folder, which seems to contain a second copy of all the  replication files (I am not sure why this folder exists)
+````{dropdown}**What is that __MACOSX folder, which seems to contain a second copy of all the  replication files (I am not sure why this folder exists)**
 
 [MAC USERs ONLY] We are also not sure, but it is a standard feature of ZIP files created on Mac OSX systems using the graphical user interface. Here's a quick fix that helps all parties involved (adapted from this [source](https://wpguru.co.uk/2013/10/how-to-remove-__macosx-from-zip-archives/)):
 
@@ -182,26 +189,28 @@ deleting: __MACOSX/._myzip
 You can now upload the file to openICPSR using the "Import from ZIP" functionality.
 
 We should note that these folders do not show up in the public view of the repository once it is published. So while it is probably OK to leave them, it is better to remove them.
-
+````
 
 ## Confidential data
 
-### The paper uses confidential data, covering [geography] for period [2001-2015]. The repository only contains code. Should the repository metadata be filled out for the data characteristics, even if the repository only has code?
+````{dropdown}**The paper uses confidential data, covering [geography] for period [2001-2015]. The repository only contains code. Should the repository metadata be filled out for the data characteristics, even if the repository only has code?**
 
 [Answer from ICPSR] I think it still makes sense to complete as much metadata as possible.  There are syntax files specific to the data available through a restricted-use agreement.  The metadata are for increasing findability of the data collection -- even if only the syntax are in the repository.  It's useful to know the data analyzed with the syntax are about a specific geographic coverage  for a specific time period.
+````
 
-### I use confidential data. I am allowed to provide the data to the Data Editor for the purpose of replication, but you are not allowed to publish the data. How do I proceed?
+````{dropdown}**I use confidential data. I am allowed to provide the data to the Data Editor for the purpose of replication, but you are not allowed to publish the data. How do I proceed?**
 
 [Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#confidential) 
 
 
-### I have been told by the Data Editor to remove PSID data from my submitted materials. What do I do?
+````{dropdown}**I have been told by the Data Editor to remove PSID data from my submitted materials. What do I do?**
 
 [Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#psid) 
+````
 
 ## Version control, Software, etc.
 
-### We used custom software. How do we describe/provide access to that?
+````{dropdown}**We used custom software. How do we describe/provide access to that?**
 
 This case might arise if authors ran an experiment or a novel type of survey, using software specifically created for the task. Our [policy](https://www.aeaweb.org/journals/data/data-code-policy) does require 
 
@@ -228,24 +237,26 @@ If software is not open source, then two cases may occur:
 - However, if the authors contracted with the developer of the software, the authors *may* also have rights to the software. 
   - If developer and authors co-own the software, the README should state what rights authors confer automatically to any replicator. For instance, if the developer needs the authors' approval to license (at some price) to any other researcher, then the README should explicitly state that the authors provide such approval. 
   - If the authors obtained full rights to the end product (a true purchase), then they should provide a mechanism to obtain the software, and state explicitly again what rights replicators have to use the software. This might include demonstration modes sufficient to conduct the replication.
+````
 
-### We already use git/svn/GitHub/GitLab/BitBucket/etc. Do you facilitate integration of existing version-controlled code to the AEA repo? Or even planned functionality for linking out directly to such projects where they can be found online?
+````{dropdown}**We already use git/svn/GitHub/GitLab/BitBucket/etc. Do you facilitate integration of existing version-controlled code to the AEA repo? Or even planned functionality for linking out directly to such projects where they can be found online?**
 
 [Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#existing) 
+````
 
-
-### Some econometrics papers might be accompanied by (for example) an R or Stata package (perhaps published on CRAN or SSC). What about surfacing references to associated packages more prominently?
+````{dropdown}**Some econometrics papers might be accompanied by (for example) an R or Stata package (perhaps published on CRAN or SSC). What about surfacing references to associated packages more prominently?**
 
 [Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#package)
+````
 
-
-### Do you support Docker/ Jupyter/ etc.?
+````{dropdown}**Do you support Docker/ Jupyter/ etc.?**
 
 [Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#support)
+````
 
 ## RCT 
 
-### Aligning AEA RCT Registry and AEA Data and Code Repository
+````{dropdown}**Aligning AEA RCT Registry and AEA Data and Code Repository**
 
 The [AEA RCT registry](https://www.socialscienceregistry.org) has a field that codes whether data associated with a registration is publicly available. Many authors will have this coded as "non public" prior to the publication of the replication package. When the replication package is about to be published on the [AEA Data and Code Repository](https://www.openicpsr.org/openicpsr/aea), this field needs to be updated. Only the authors of the registry can update this field. Steps to follow:
 
@@ -275,5 +286,5 @@ The [AEA RCT registry](https://www.socialscienceregistry.org) has a field that c
 - Select "`is supplemented by`" and press "Save and Apply"
 
 ![Selecting relationship](/images/project-related-icpsr-modal3.png)
-
+````
 

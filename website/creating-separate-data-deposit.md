@@ -72,7 +72,7 @@ Examples:
 
 ## Additional thoughts
 
-### Project websites and archives 
+````{dropdown}**Project websites and archives**
 
 Some researchers keep separate websites for their long-running projects, including providing data on those websites. While the stylistic freedom of a free-standing website is certainly important, we suggest that the data provided via those websites (e.g., `www.fabdata.org/data/superdata.zip`), be archived in a trusted repository, and that the primary download link point to those repositories.
 
@@ -86,8 +86,9 @@ Example:
 - [Census Linking Project](https://censuslinkingproject.org/) (Abramitzky, Boustan, and many others) allows to select data on their [website](https://censuslinkingproject.org/), but stores (preserves) the data at [https://dataverse.harvard.edu/dataverse/censuslinkingproject](https://dataverse.harvard.edu/dataverse/censuslinkingproject)
 
 In addition, you might want to save the website to the [Internet archive](archive.org) to make a permanent copy of the front end web pages.
+````
 
-### Collections and Communities
+````{dropdown}**Collections and Communities**
 
 Some trusted repositories offer the option to make what are called "collections", "communities", "dataverses", or similar. This can be used for single projects, entire institutes, or journals
 
@@ -101,8 +102,9 @@ Some trusted repositories offer the option to make what are called "collections"
 - [Harvard Dataverse](https://dataverse.harvard.edu): "*Organize datasets and gather metrics in your own repository. A dataverse is a container for all your datasets, files, and metadata.*"
   - Example: [Bracero data](https://dataverse.harvard.edu/dataverse/bracero) stores both raw data and cleaned data within a "dataverse"
   - Tutorial: [IQSS Tutorial](https://youtu.be/5l4VZ-T2WYE?t=3780)
+````
 
-### Curation vs. Preservation
+````{dropdown}**Curation vs. Preservation**
 
 Most of the free or low-cost resources mentioned here provide preservation of the deposited materials, but are essentially self-serve websites with included preservation. No professional archivist or curator will inspect data, or work to improve the data quality. However, in some cases, it may make sense to work with a professional archivist to further improve the quality of the archived materials. 
 
@@ -115,8 +117,9 @@ Example:
 - [Curated raw data](https://doi.org/10.3886/ICPSR37937.v1)
 
 A note that such curation can take significant time (several months). It may also carry a cost, depending on, for instance, membership of an author's institution in ICPSR.
+````
 
-### Restrictions
+````{dropdown}**Restrictions**
 
 When creating a separate DATA deposit because of ethical or legal requirements, you may want to enforce an application process and/or provide a more restricted license. 
 
@@ -129,3 +132,4 @@ The following example uses two linked deposits. All code is available for unrest
 - [Deposit of restricted-access data](https://doi.org/10.3886/E139263V1): this deposit contains the sensitive data, and requires that interested parties apply, and demonstrate IRB approval. It is, however, available to anybody who qualifies.
 
 To learn more about how to create restricted DATA deposits for AEA (and other) journals, visit [our guide to depositing restricted data at ICPSR](creating-restricted-data-deposit-icpsr).
+````

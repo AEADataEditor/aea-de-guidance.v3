@@ -47,7 +47,7 @@ AEA authors are required to submit a [Data and Code Availability Form](https://w
 
 ### Sharing data with Data Editor
 
-#### Preferred contractual arrangement
+````{dropdown}**Preferred contractual arrangement**
 
 The AEA Data Editor is an employee of an educational institution, not the AEA itself (see [main page](https://aeadataeditor.github.io/) for the current AEA Data Editor's affiliation). Thus, all access rights are constrained by rules at that educational institution. 
 
@@ -58,20 +58,22 @@ The AEA Data Editor is an employee of an educational institution, not the AEA it
 
     - In general, the AEA Data Editor does **not** need separate IRB approval, since the work of the AEA Data Editor does not constitute "engagement" (formal involvement in research) because, as described in 45CFR46 (Common Rule) "*the services performed do not merit professional recognition or publication privileges*" [[1](https://www.hhs.gov/ohrp/regulations-and-policy/guidance/guidance-on-engagement-of-institutions/index.html)] (the AEA Data Editor does not publish any of the work they conduct as part of the reproducibility checks)
     - However, in some cases, the data provider may still require formal consideration by the IRB at the AEA Data Editor's institution. Our IRB (at this time, Cornell University) has agreed to review such requests if necessary. 
+````
 
-#### Preferred data access
+````{dropdown}**Preferred data access**
 
 - If the data do not contain personal identifiers, then in general, transfer is straightforward, but check with your DUA/NDA/IRB approval/exemption. 
 - The AEA Data Editor uses IT systems that are university-controlled, with access protected by VPN and individual sign-on, both using 2FA. 
 - If the data do require higher security protocols, the AEA Data Editor has access to [high-security remote-access environments at Cornell University](https://ciser.cornell.edu/data/secure-data-services/cradc/), though setting up access may require additional time (and may require approval by Cornell's Office of Sponsored Research).
+````
 
-#### Mechanics of data transfer
+````{dropdown}**Mechanics of data transfer**
 
 - All data transfers should be compliant with your DUA/NDA.
 - By default, if you have signalled that you can provide data privately, the Data Editor will send you an email containing a link to a secure upload form, where you can provide the data
 - You can share data with the AEA Data Editor using other means, such as your own Dropbox, Google Drive, OneDrive, etc. subscription.
 - If necessary, you can also provide the AEA Data Editor with remote access to your own computing infrastructure (remote login to compute nodes or virtual enclaves).
+````
 
 All of these methods have been successfully used in the past.
-
 

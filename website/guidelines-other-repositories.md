@@ -75,7 +75,7 @@ This ensures that the information is findable in both directions, not just from 
 
 The **contents** of the deposit must, of course, satisfy all other requirements for AEA replication packages.
 
-### Uploading and downloading large quantities of files
+````{dropdown}**Uploading and downloading large quantities of files**
 
 Some repositories allow for the upload of files via API or import from online services. This may be useful for particularly large data deposits.
 
@@ -85,10 +85,11 @@ Some repositories allow for the upload of files via API or import from online se
 >  Zenodo: The legacy API is being deprecated. Once newer guidance and tools are available, we will update this page. For now, Zenodo points to [InvenioRDM](https://inveniordm.docs.cern.ch/reference/rest_api_index/) for API guidance (2023)
 
 - Dataverse: See [documentation for Dataverse API](https://guides.dataverse.org/en/5.12/api/index.html). A R package [`dataverse-client-r`](https://github.com/IQSS/dataverse-client-r) can download individual files or complete packages. [pyDataverse](https://pydataverse.readthedocs.io/en/latest/) is Python code  to interface with Dataverses.
+````
 
 ## Additional repository-specific guidance
 
-### Zenodo
+````{dropdown}**Zenodo**
 
 The AEA has a "community" on Zenodo: [https://zenodo.org/communities/aeajournals](https://zenodo.org/communities/aeajournals)
 
@@ -112,8 +113,9 @@ If you already have a published deposit, you can "Submit to community".
 > Zenodo [Submit to community for inclusion](https://help.zenodo.org/docs/share/submit-to-community/)
 
 At the time of writing, [Zenodo allows](https://help.zenodo.org/docs/deposit/manage-files/) for "up to 50GB per record with a maximum of 100 files." To the extent possible (conditional on preserving directory structure), you should unzip as many files as possible. 
+````
 
-### Codeocean
+````{dropdown}**Codeocean**
 
 If you can publish your data freely, and the data is less than 2GB, you can construct your entire replication package on CodeOcean. If on the other hand your replication package requires future replicators to download data, then you will not be able to use Codeocean.
 
@@ -124,7 +126,7 @@ You can deduce the presumptive DOI on Codeocean from the capsule number, visible
 You can compute the DOI in the following way:
 
 {% include deposit-doi-codeocean.html %}
-
+````
 
 ## Publishing, saving, and sharing
 
@@ -142,15 +144,15 @@ Once the AEA has published your manuscript, the manuscript DOI will be locked in
 
 Here are some guidelines on how to do that update:
 
-### Adding manuscript DOI to CodeOcean capsule
+````{dropdown}**Adding manuscript DOI to CodeOcean capsule**
 
 Authors will need to email Codeocean support ([support@codeocean.com](mailto:support@codeocean.com)), providing them with the capsule number and the DOI to be linked from the capsule. Support will update the capsule metadata. 
 
 Normally, this should not generate a new version (`V2`), but rather, a `V1.1`. The DOI of the deposit should not change. 
 
 ![Updated CodeOcean after adding manuscript DOI](/images/codeocean-update-link-doi.png)
-
-### Adding manuscript DOI to other openICPSR repositories
+````
+````{dropdown}**Adding manuscript DOI to other openICPSR repositories**
 
 Authors will need to edit the metadata under the "Related Publications" heading:
 
@@ -174,8 +176,8 @@ Authors will need to edit the metadata under the "Related Publications" heading:
 ![Select relationship](/images/project-related-icpsr-modal3.png)
 
 - Select `Save and Apply`. The change will take effect immediately, there is no need to go through the publication process.
-
-### Adding related manuscript to Dataverse
+````
+````{dropdown}**Adding related manuscript to Dataverse**
 
 This should be applicable to any Dataverse instance.
 
@@ -190,8 +192,8 @@ This should be applicable to any Dataverse instance.
 - Save and then don't forget to publish 
 
 > Contributed by Charlotte Cavaillé.
-
-### Adding related manuscript to Zenodo
+````
+````{dropdown}**Adding related manuscript to Zenodo**
 
 - See [Edit published records](https://help.zenodo.org/docs/deposit/manage-records/#edit) for details on how to edit the metadata of a deposit (a "record")
 - Go to [My Uploads](https://zenodo.org/me/uploads) and find the record.
@@ -206,7 +208,7 @@ This should be applicable to any Dataverse instance.
 - Optionally choose `Preview`, then `Publish`. 
 
 This does NOT create a new version. Do not change any files.
-
+````
 ## Special notes
 
 None at present.
@@ -219,23 +221,24 @@ If your pre-existing deposit does not satisfy all of these rules, you can genera
 
 ## Examples
 
-### Zenodo
+````{dropdown}**Zenodo**
 
 Good examples can be found in the [AEA Journal Community](https://zenodo.org/communities/aeajournals/), for instance:
 
 - U.S. Geological Survey, & Brooks, Leah. (2022). USGS National Map 3DEP 1 Arc-second Digital Elevation Models (DEMs): Full Coverage for U.S. Interstate Highway System [Data set]. Zenodo. [https://doi.org/10.5281/zenodo.5830968](https://doi.org/10.5281/zenodo.5830968) (83GB)
 - Ministerio de Desarrollo Productivo Argentina, Daruich, Diego, Kozlowski, Julian, & Vilhuber, Lars. (2022). Precios Claros (2016-05 - 2018-03) [Data set]. In American Economic Journal: Macroeconomics. Zenodo. [https://doi.org/10.5281/zenodo.6568295](https://doi.org/10.5281/zenodo.6568295) (44GB, about 1,200 files)
-
-### Codeocean
+````
+````{dropdown}**Codeocean**
 
 Some examples of replication packages on CodeOcean are:
 
 - Ryan Chahrour, Robert Ulbricht (2022) Compute Capsule for: Robust Predictions for DSGE Models with Incomplete Information [Source Code]. [https://doi.org/10.24433/CO.5177698.v1](https://doi.org/10.24433/CO.5177698.v1)
 - Mónica García-Pérez, José Fernandez, Sandra Orozco-Aleman (2024) Compute Capsule for: Unraveling the Hispanic Health Paradox [Source Code]. [https://doi.org/10.24433/CO.7234900.v1](https://doi.org/10.24433/CO.7234900.v1)
-
-### Dataverse
+````
+````{dropdown}**Dataverse**
 
 - Cavaillé, Charlotte, 2022, "Replication Code for "Immigration and Support for Redistribution: Lessons from Europe"", [https://doi.org/10.7910/DVN/6WTDRH](https://doi.org/10.7910/DVN/6WTDRH), Harvard Dataverse, V3 
+````
 
 ## Note
 

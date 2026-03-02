@@ -12,13 +12,14 @@ In certain situations, authors might want to provide access to others (co-author
 
 Deposits are shared by specifying an email address. If the recipient does not yet have an openICPSR login associated with the email address, they will be invited to create a (free) account.
 
-### Open the Share dialog
+````{dropdown}**Open the Share dialog**
 
 ![Open Share Dialog](/images/openicpsr-restricted-share.png)
 
 ![Share Dialog](/images/openicpsr-restricted-share2.png)
+````
 
-### Add the recipient and specify rights
+````{dropdown}**Add the recipient and specify rights**
 
 Recipients can be limited in their actions:
 
@@ -35,13 +36,15 @@ For co-authors, one would normally choose all of the above. For third-party repl
 The recipient will receive an email to alert them of their new-found capabilities.
 
 ![Email to recipient](/images/openicpsr-invitation-email.png)
+````
 
-### Reviewing permissions
+````{dropdown}**Reviewing permissions**
 
 Permissions can be adjusted after the initial share. Simply view the existing permissions, and adjust as necessary.
 
 
 ![Viewing permissions for replicator](/images/openicpsr-restricted-share4.png)
+````
 
 ## Rescinding permissions
 

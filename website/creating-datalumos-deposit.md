@@ -36,15 +36,15 @@ Search existing holdings to see if the data have already been deposited:
 
 ## Start the deposit process
 
-Go to the [DataLumos](https://www.datalumos.org/datalumos/), and choose `Add Data Now`:
+1. Go to the [DataLumos](https://www.datalumos.org/datalumos/), and choose `Add Data Now`:
 
-[![Start process](/images/datalumos-10.png)](https://www.datalumos.org/datalumos/workspace).
+[![Start process](/images/datalumos-10.png)](https://www.datalumos.org/datalumos/workspace)
 
 You may need to create an ICPSR account first.
 
 ## Create a new project
 
-Then, create a new project:
+2. Then, create a new project:
 
 ![Create new project](/images/datalumos-11.png)
 
@@ -52,17 +52,17 @@ Then, create a new project:
 
 ![Name the project](/images/datalumos-12.png)
 
-Title the project accurately and descriptively, preferably using the exact title provided by the agency originally issuing the data. This will help others find the data, and connect it with its original location.
+3. Title the project accurately and descriptively, preferably using the exact title provided by the agency originally issuing the data. This will help others find the data, and connect it with its original location.
 
 Do not add your name, your paper, etc.
 
 ## Describe the project
 
-You should now provide additional information in the `Project Description`:
+4. You should now provide additional information in the `Project Description`:
 
 ![screenshot of project description](/images/datalumos-1.png)
 
-### Data Producer (Government agency)
+````{dropdown}**Data Producer (Government agency)**
 
 Data produced by or associated with a specific US government agency should list the agency as the author of the data in the `Government Agency/Principal Investigator(s)` field. Click on the `+ add value` and switch to the `Organization/Agency` tab of the pop-up window.
 
@@ -71,12 +71,14 @@ Data produced by or associated with a specific US government agency should list 
 You should start typing, typically with the full name of the department without acronyms. In the example screenshot, while the agency is typically referred to as "OPM", it was found by typing `United States Office of P` before the type-ahead found the agency. Try to avoid creating new variants of the name. However, if you cannot find it, simply write the name of the agency as accurately as possible. 
 
 ![Name of the Agency](/images/datalumos-2.png)
+````
 
-### Summary field
+````{dropdown}**Summary field**
 
 You should provide ideally relevant information taken verbatim from the original website. You can then add information on when the data were downloaded or scraped, and if you wish, who did this. 
+````
 
-### Original Distribution URL
+````{dropdown}**Original Distribution URL**
 
 Provide the URL where the data were originally found. 
 
@@ -85,16 +87,17 @@ Provide the URL where the data were originally found.
 - If the data are found on a page with multiple datasets, provide the URL of that page. You can then add more information in the summary field.
 
 ![Original URL](/images/datalumos-7.png)
+````
 
-### Additional information (metadata)
+````{dropdown}**Additional information (metadata)**
 
 - Try to capture a PDF or a screenshot of the website as it was when you downloaded it. This can be useful. The PDF can be uploaded as part of the next step.
 - Also try to identify any additional documentation, such as codebooks.
-
+````
 
 ## Upload data files
 
-### Importing a ZIP file
+````{dropdown}**Importing a ZIP file**
 
 You should try to preserve the data in its original arrangement, with any subdirectories. The best way to achieve this is to compile a ZIP file of the preserved data.
 
@@ -108,8 +111,9 @@ You then `Import from ZIP`, which will expand the ZIP file, preserving the direc
 ![Importing from ZIP](/images/datalumos-9.png)
 
 > ⚠️ WARNING: The process of both uploading and unpacking the ZIP file can take some time, depending on the size of the file. Be patient!
+````
 
-### Uploading individual files
+````{dropdown}**Uploading individual files**
 
 For other files, they can be added individually. Use the `Upload Files` button.
 
@@ -130,11 +134,11 @@ You can now choose, or drag-and-drop, the files to be uploaded. While files are 
 > ⚠️ WARNING: The process of uploading and then subsequently checking the files can take some time, depending on the size of the file. Be patient! ⏱️
 
 Files that are still being checked are indicated with `File not available for download 🗑️`. 
+````
 
 ## Publishing the deposit
 
-
-### Start the publishing workflow
+````{dropdown}**Start the publishing workflow**
 
 When everything is ready, on the right-hand side is a `📣 Publish Project` button.
 
@@ -143,51 +147,56 @@ When everything is ready, on the right-hand side is a `📣 Publish Project` but
 You can review the information as it will be published again:
 
 ![Review information](/images/datalumos-15.png)
+````
 
-
-### Submission questions
+````{dropdown}**Submission questions**
 
 You will then be presented with a page, asking various questions. 
 
 > You should answer these questions in regards to the **data in the deposit** you are submitting. The answer should NOT consider any other data that have not been uploaded. Usually, if you downloaded it from a public website without registration requirements, the answer to the first two questions is "No".
 
-##### Can individuals be identified?
+**Can individuals be identified?**
 
 ![Identification question 1](/images/icpsr-submit-q1.png)
 
 The normal answer to this question is "No." 
 
-##### Are the data sensitive?
+**Are the data sensitive?**
 
 ![Sensitivity question 2](/images/icpsr-submit-q2.png)
 
 The normal answer to this question is "No." 
 
-##### Distribution question
+**Distribution question**
 
 > If both previous answers are `No`, this question does not appear.
 
 ![Distribution question](/images/icpsr-submit-q3.png)
 
 You should answer this one as a function of the earlier answers. "Public download" means users will be registered users of openICPSR and consent to the license (next question), without further controls. "Restricted access" means that data will be distributed through ICPSR's [Restricted Data Access Mechanism](https://www.icpsr.umich.edu/web/pages/ICPSR/access/restricted/).
+````
 
-#### Delayed Dissemination
+````{dropdown}**Delayed Dissemination**
 
 Usually, you would answer this with `No`. 
+````
 
-#### Choose a license
+````{dropdown}**Choose a license**
 
 ![License question](/images/icpsr-submit-q4-license.png)
 
 You should choose a license from the drop-down menu. If depositing data that came from a U.S. government website, you would normally choose "Public Domain mark".
+````
 
-#### Read the agreement and consent
+````{dropdown}**Read the agreement and consent**
 
 Reminder that you should always read the agreements that you consent to!
+````
 
-#### Finalizing
+````{dropdown}**Finalizing**
 
 Press "Publish data." It might take a while for the data to be published.
+````
 
 ## Final outcome
 

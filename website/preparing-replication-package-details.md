@@ -13,9 +13,9 @@ This document describes how to prepare your code for verification in detail, tak
 
 
 
-## Detailed instructions
+### Detailed instructions
 
-### Preliminary: Directory structure of a replication package
+````{dropdown}**Preliminary: Directory structure of a replication package**
 
 A generic replication package, housed at `/my/computer/users/me/project`, might have the following structure: 
 
@@ -51,10 +51,12 @@ where
 For illustration purposes, we have used Stata `.do` files, and outputs in a variety of formats, but the same principles apply to other software, and to any output formats.
 
 > Note that we did not specify where the `main.do` file will be! 
+````
 
-### Short-cut
+````{dropdown}**Short-cut**
 
 > If you want to include the key code pieces for Stata that are needed to comply with Steps 1-3, you can use  [this code fragment](https://gist.github.com/larsvilhuber/d8b643a408d425ef2a80385b6377870d). Note that you do not HAVE to use this specific code, if your code already has equivalent features!
+````
 
 ### Step 1: Main file
 
@@ -64,9 +66,10 @@ For illustration purposes, we have used Stata `.do` files, and outputs in a vari
 
 Creating a single main file is straightforward. However, you will want to make some minor edits depending on where, in the above template setup, the file is located:
 
-#### Scenario A: `main` is in the `code` directory
+````{dropdown}**Scenario A: main is in the code directory**
 
 The most frequent scenario we see (which we call **Scenario A**) amongst economists is that the main file is in the `code` directory:
+
 
 ```
 README.pdf
@@ -98,8 +101,9 @@ do "$rootdir/code/02_readfred.do"
 do "$rootdir/code/03_table1-5.do"
 do "$rootdir/code/04_figures1-4.do"
 ```
+````
 
-#### Scenario B: `main` is in the top-level directory
+````{dropdown}**Scenario B: main is in the top-level directory**
 
 More common in other computational sciences, but also present amongst economists, is that the main file is in the top-level directory:
 
@@ -135,8 +139,9 @@ do "$rootdir/code/02_readfred.do"
 do "$rootdir/code/03_table1-5.do"
 do "$rootdir/code/04_figures1-4.do"
 ```
+````
 
-#### Important
+````{dropdown}**Important**
 
 > In neither scenario did we hard-code the path to our project directory `/my/computer/users/me/project`. This is not an omission, and it is important, because it allows the code to be run on any computer, without modification.
 
@@ -155,7 +160,7 @@ rootdir <- rprojroot::find_root_file("README.pdf")  # or other marker file
 
 > IMPORTANT: your code MUST contain the line (Stata) `global rootdir : pwd` (or equivalent) to set the project root directory dynamically. 
 
-
+````
 ### Step 2: Path names and case
 
 Two issues:
@@ -173,7 +178,7 @@ About 40% of replication packages in economics appear to be submitted by researc
 
 You should thus **replace all path names in your code to use `/` (forward slashes)**, or appropriate functions, and take care to write **case-sensitive file and path names**. This is straightforward:
 
-#### Stata
+````{dropdown}**Stata**
 
 ```stata
 // Instead of
@@ -183,8 +188,9 @@ use "data/analysis/combined_data.dta", clear
 // or better
 use "$rootdir/data/analysis/combined_data.dta", clear
 ```
+````
 
-#### R
+````{dropdown}**R**
 
 ```r
 # Instead of
@@ -196,23 +202,25 @@ data <- read.csv(file.path(rootdir, "data", "analysis", "combined_data.csv"))
 ```
 
 and similarly for other languages.
+````
 
-
-#### Implementing
+````{dropdown}**Implementing**
 
 In many cases, you can just globally replace all `\` with `/` in your code files. Caution however is warranted if your code explicitly writes out $LaTeX$ code, which also (legitimately) uses `\`. In that case, you will need to be more careful.
+````
 
-#### Expert tip
+````{dropdown}**Expert tip**
 
 If using a (Bash or Zsh) terminal, you likely have the `sed` command available. You can use it to replace all backslashes with forward slashes in all `.do` files in the `code` directory as follows:
 
 ```bash
 sed -i 's+\\+/+g' code/*.do
 ```
+````
 
 ### Step 3: Dependencies
 
-#### Stata packages
+````{dropdown}**Stata packages**
 
 Stata users frequently use user-written packages, which are made available to the Stata community via the [Stata Journal](https://www.stata-journal.com/), [SSC](https://ideas.repec.org/s/boc/bocode.html), or Github. They are typically installed using a small number of variants of the `net install` command (including `ssc install`). 
 
@@ -312,8 +320,8 @@ The following files should be included in your replication package:
 ```bash
 code/ado/*
 ```
-
-#### R packages
+````
+````{dropdown}**R packages**
 
 For R packages, we suggest that users use `renv`, and do not set a specific CRAN mirror. We refer users to the [renv documentation](https://rstudio.github.io/renv/articles/renv.html) for details, but in a nutshell, for an existing R project that is not using `renv`, the following commands should be run in the R console:
 
@@ -338,6 +346,7 @@ renv/settings.json
 ```
 
 Do not include the entire `renv` directory, in particular not the `renv/library` subdirectory, as it is platform-specific (of no use to other platforms), and can be very large.
+````
 
 ### Step 4: Displays
 
@@ -345,7 +354,7 @@ Displays (figures and tables) should be written out to external files, and the a
 
 > Reference: <https://larsvilhuber.github.io/self-checking-reproducibility/03-automatically_saving_figures.html> and <https://github.com/labordynamicsinstitute/replicability-training/wiki/How-to-output-tables-and-figures>
 
-**Figures**
+````{dropdown}**Figures**
 
 - All figures can be written out to files. Journals like `pdf` and `eps` files, but `png` are convenient. You can output multiple formats.
 - Whenever you have displayed a figure, also `export`it to a file. It's a simple command.
@@ -373,9 +382,9 @@ ggsave(filename = file.path(rootdir, "results", "figure1.png"), plot = myplot, w
 *More complex figures*
 
 For more complex figures, it may be easier to simply write out the data underlying the figure to an Excel sheet, and create the figure there. See <https://github.com/labordynamicsinstitute/replicability-training/wiki/How-to-output-tables-and-figures#arbitrary-data-to-excel>  on how to write out the underlying data. **You would then include the Excel file that maps the data into a figure with your replication package.**
+````
 
-
-**Tables**
+````{dropdown}**Tables**
 
 Tables may be more complex. Simple tables can be written out using various tools:
 
@@ -390,12 +399,13 @@ Tables may be more complex. Simple tables can be written out using various tools
 *More complex tables*
 
 For more complex tables, it may be easier to simply write out entire matrices, or individual numbers, to an Excel sheet, and compose the table there. See <https://github.com/labordynamicsinstitute/replicability-training/wiki/How-to-output-tables-and-figures#examples> for an example, especially if you have already been compiling your tables in Excel. **You would then include the Excel file that maps the data into your preferred table layout with your replication package.**
+````
 
 ### Step 5: Testing in containers
 
 After you have made all the above changes, you should test your code in an appropriate **authorized** container. To make this simple, we have set up a public website that hides the complexity of running containers from you. You only need to choose the software, the system will run the properly configured code automatically. 
 
-#### Using the SIVACOR website
+````{dropdown}**Using the SIVACOR website**
 
 We have developed the [SIVACOR](https://sivacor.org) service, which allows you to run your code using authorized containers without the need to install software on your own computer, producing a Trusted Research Object (TRO). 
 
@@ -404,14 +414,14 @@ We have developed the [SIVACOR](https://sivacor.org) service, which allows you t
 [![SIVACOR landing page](/images/sivacor-login.png)](https://sivacor.org)
 
 For more information on how to use SIVACOR, see <https://docs.sivacor.org/>. Once you have successfully run your code on SIVACOR, provide the generated certified ZIP file  instead of the original replication package to the Data Editor. A TRO does not need to be re-run by the Data Editor.
+````
 
-
-#### Authorized containers
+````{dropdown}**Authorized containers**
 
 SIVACOR uses a curated list of containers, chosen because  they are reliably available, and achieve the desired transparency. You can inspect the most current list at <https://docs.sivacor.org/docs/images/>. In general, Stata, R, and MATLAB (with Dynare) are supported. 
 
 If you know of a different container that we should add to this list, please let us know. The [AEA Data Editor's Github profile](https://github.com/AEADataEditor/) has a few other containers that have worked..
-
+````
 
 ### Testing using Docker locally (advanced)
 
@@ -421,7 +431,7 @@ If SIVACOR does not work for you, you can either attempt to run it in Docker on 
 
 > ⚠️❗ **IMPORTANT:** Do not provide us with a custom container that is not  on the above list. Transparency requires that the container be built, using a `Dockerfile` or `apptainer.def` file, from publicly available sources. While we will happily use your container, it must be built from one of the above sources, or well-known "standard" sources, such as "Docker Official Images" in the Dockerhub `library` space (e.g., <https://hub.docker.com/_/python>).
 
-#### Steps
+````{dropdown}**Steps**
 
 - Install the software necessary for running containers.
   - For Windows, install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/).
@@ -492,9 +502,9 @@ docker run -it --rm \
   ${CONTAINER} -b main.do
 ```
 
+````
 
-
-#### Fallback: Run on a different computer
+````{dropdown}**Fallback: Run on a different computer**
 
 If you do not have, or cannot, install Docker, and you cannot use SIVACOR, use this alternative approach to test your code:
 
@@ -506,13 +516,15 @@ If you do not have, or cannot, install Docker, and you cannot use SIVACOR, use t
 [^noteshell]: In PowerShell, you can use `R --no-save --no-restore -f main.R | Out-File -Encoding UTF8 main.Rout`. 
 
 We note that in our experience, this approach is much less reliable. 
+````
 
-#### Success
+````{dropdown}**Success**
 
 If your code does run into problems, the generated `main.log` or `main.Rout` should have clues as to what went wrong. You should be able to fix these issues, and re-run the code in the container, until it runs without error.
 
 
 If your code runs without error, and produces all expected output files, you are done! 
+````
 
 ### Finalize README
 
