@@ -1,3 +1,7 @@
+---
+title: Template inquiry about DOI by editor 
+---
+
 (This template can be used by the Data Editor to contact data providers)
 
 Dear [name],

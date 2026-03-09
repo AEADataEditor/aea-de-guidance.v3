@@ -1,3 +1,7 @@
+---
+title: Using Codeocean
+---
+
 
 The basic thing to know about CO: you cannot have code and data in the same place (it's a really bad idea anyway, ...). So packages are split into "/data" and "/code".
 

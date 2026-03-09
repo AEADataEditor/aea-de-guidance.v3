@@ -3,8 +3,7 @@
 
 These  web pages provide unofficial and developing guidance on the implementation of the American Economic Association (AEA)'s Data and Code Availability Policy. We also provide links to [generic guidance](https://social-science-data-editors.github.io/guidance/) being developed by a loose collective ("guild") of data editors and people in a similar role at various social science journals.
 
-<a href="https://twitter.com/aeadata?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @aeadata</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-
+Follow [\@aeadata](https://twitter.com/aeadata) on Twitter
 ---
 
 ## Order in which AEA authors should read these resources

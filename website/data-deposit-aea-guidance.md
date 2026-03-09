@@ -1,5 +1,5 @@
 ---
 title:  "Data deposit guidance"
-layout: redirect
-redirect: data-deposit-aea.html
 ---
+
+<meta http-equiv="refresh" content="0; url=data-deposit-aea.html">

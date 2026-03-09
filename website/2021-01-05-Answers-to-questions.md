@@ -1,6 +1,5 @@
 ---
 title:  "A discussion about various things"
-layout: redirect
-redirect: https://aeadataeditor.github.io/posts/2021-01-05-answers-to-questions
 ---
 
+<meta http-equiv="refresh" content="0; url=/https://aeadataeditor.github.io/posts/2021-01-05-answers-to-questions">

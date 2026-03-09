@@ -1,6 +1,5 @@
 ---
 title:  "FAQ"
-layout: redirect
-permalink: /aea-de-guidance/faq.html
-redirect: /aea-de-guidance/FAQ.html
 ---
+
+<meta http-equiv="refresh" content="0; url=/faq.html">
