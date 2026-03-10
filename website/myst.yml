@@ -48,7 +48,22 @@ project:
     
     
 site:
-  template: book-theme
+    nav:
+     - title: "START REPLICATION PACKAGE"
+       url: /index
+     - title: "FAQ"
+      url: /faq
+     #- title: "Blog Posts"
+    #   url: 
+    # - title: "Talks"
+    #   url:  
+    # - title: "Projects"
+    #   url:    
+    # - title: "Surveys"
+    #   url:    
+    # - title: "Pubications"
+    #   url:    
+  #template: book-theme
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
