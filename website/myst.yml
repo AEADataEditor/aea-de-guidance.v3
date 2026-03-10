@@ -48,23 +48,28 @@ project:
     
     
 site:
-    nav:
+  logo: images/thumbnail_website_logo.jpg
+  twitter: aeadata
+  #template: book-theme
+  #options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
+  nav:
      - title: "START REPLICATION PACKAGE"
        url: /index
      - title: "FAQ"
-      url: /faq
-     #- title: "Blog Posts"
-    #   url: 
-    # - title: "Talks"
-    #   url:  
-    # - title: "Projects"
-    #   url:    
-    # - title: "Surveys"
-    #   url:    
-    # - title: "Pubications"
-    #   url:    
-  #template: book-theme
-  # options:
-  #   favicon: favicon.ico
-  #   logo: site_logo.png
+       url: /faq
+     - title: "Blog Posts"
+       url: https://aeadataeditor.github.io/year-archive/
+     - title: "Talks"
+       url:  https://aeadataeditor.github.io/talks/
+     - title: "Projects"
+       url:   https://aeadataeditor.github.io/projects/
+     - title: "Surveys"
+       url:  https://aeadataeditor.github.io/surveys/  
+     - title: "Pubications"
+       url:    https://aeadataeditor.github.io/publications/
+
+  parts:
+    footer: footer.md
   
