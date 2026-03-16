@@ -46,7 +46,7 @@ When some of the conditions are not met with our own resources, we may ask other
 
 We classify the outcome of the verification as follows:
 
-````{dropdown}**Accept````
+````{dropdown}**Accept**
 
 Authors receive the report by the AEA Data Editor via ScholarOne.
 
