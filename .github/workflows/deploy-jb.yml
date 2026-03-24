@@ -6,6 +6,19 @@ on:
   push:
     # Runs on pushes targeting the default branch
     branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Deploy to GitHub Pages'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
   # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
@@ -22,42 +35,50 @@ permissions:
 concurrency:
   group: 'pages'
   cancel-in-progress: false
-  
+
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-    #  url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout repo 
+      - name: Checkout repo
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: 'pip' # caching pip dependencies
-              
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          
+
       - name: Install Jupyter Book (via myst)
-        run:  pip install jupyter-book
-        
+        run: pip install jupyter-book
+
       - name: Build HTML Assets
         run: |
           cd website
           jupyter-book build --html
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './website/_build/site'
-          
+
+  deploy:
+    needs: build
+    # Deploy on push to main, or on manual trigger when deploy=true
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && inputs.deploy == 'true')
+    environment:
+      name: github-pages
+    #  url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
