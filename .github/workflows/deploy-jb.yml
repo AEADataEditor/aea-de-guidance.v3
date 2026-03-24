@@ -43,10 +43,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18.x
           
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book

@@ -1,4 +1,5 @@
 # MyST build outputs
 _build
 .venv
-.html.DS_Store
+.html
+.DS_Store
