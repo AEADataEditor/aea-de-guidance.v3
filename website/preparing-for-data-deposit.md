@@ -322,10 +322,11 @@ Ideally, once you have prepared your replication package, **you should re-run th
 
 Before proceeding, do check:
 
-- [ ] you have prepared a README that provides all the relevant information, as per the [README template](https://social-science-data-editors.github.io/template_README/) 
-- [ ] your manuscript includes data citations 
-- [ ] your data and code deposit contains all code, including code to read in raw data, *even when the data cannot be provided*.
-- [ ] your replication package has been re-executed, and reproduces the tables and figures in your manuscript faithfully.
+- [ ] you have prepared a [README](preparing-for-data-deposit#describing-the-contents-of-your-replication-package-with-a-readme) that provides all the relevant information, as per the [README template](https://social-science-data-editors.github.io/template_README/) 
+- [ ] your manuscript includes [data citations](preparing-for-data-deposit#data-citations)
+- [ ] your data and code deposit contains all [code](preparing-for-data-deposit#code), including code to read in raw [data](preparing-for-data-deposit#data-structure-of-a-replication-package), *even when the data cannot be provided*.
+- [ ] you have chosen a [license](preparing-for-data-deposit#choosing-a-license) (if relevant)
+- [ ] your replication package has been [re-executed](preparing-for-data-deposit#re-run-your-replication-package), and reproduces the tables and figures in your manuscript faithfully.
 
 ### Next step
 
