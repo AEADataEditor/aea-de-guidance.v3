@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -54,9 +54,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Install Jupyter Book (via myst)
-        run: pip install jupyter-book
-
       - name: Build HTML Assets
         run: |
           cd website
@@ -65,7 +62,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './website/_build/site'
+          path: './website/_build/html'
 
   deploy:
     needs: build
@@ -81,4 +78,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
