@@ -81,4 +81,18 @@ site:
 
   parts:
     footer: footer.md
-  
+    
+  myst_enable_extensions:
+    - colon_fence       # required for ::: blocks
+    - deflist
+    - html_admonition
+    - html_image
+    - linkify
+    - substitution
+    - tasklist
+    - fieldlist
+    - cards             # required for {cards}/{card} directives
+    
+  cards:
+    default_columns: 3   # optional, default number of cards per row
+    gutter: 3 
