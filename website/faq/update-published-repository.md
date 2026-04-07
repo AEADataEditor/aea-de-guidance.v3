@@ -1,6 +1,5 @@
 ---
 title: How to update a published repository
-orphan: true
 tags:
   - openICPSR
   - revision

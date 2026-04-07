@@ -1,6 +1,5 @@
 ---
 title: I cannot upload or edit my repository
-orphan: true
 tags:
   - openICPSR
   - editing

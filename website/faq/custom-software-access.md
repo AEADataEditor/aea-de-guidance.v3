@@ -1,6 +1,5 @@
 ---
 title: Custom software - how to provide access
-orphan: true
 tags:
   - software
   - custom code

@@ -1,6 +1,5 @@
 ---
 title: What is the __MACOSX folder?
-orphan: true
 tags:
   - Mac
   - ZIP

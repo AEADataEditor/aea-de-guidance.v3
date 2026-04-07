@@ -3,3 +3,6 @@ _build
 .venv
 .html
 .DS_Store
+
+# Generated files
+website/faq-include.md

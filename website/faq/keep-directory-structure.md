@@ -1,6 +1,5 @@
 ---
 title: Should we keep our directory structure?
-orphan: true
 tags:
   - directory structure
   - organization

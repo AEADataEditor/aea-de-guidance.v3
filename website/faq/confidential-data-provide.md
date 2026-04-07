@@ -1,6 +1,5 @@
 ---
 title: Providing confidential data to Data Editor
-orphan: true
 tags:
   - confidential data
   - restricted data

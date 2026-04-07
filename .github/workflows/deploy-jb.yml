@@ -54,6 +54,11 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Generate FAQ cards
+        run: |
+          cd website
+          python generate_faq_cards.py
+
       - name: Build HTML Assets
         run: |
           cd website

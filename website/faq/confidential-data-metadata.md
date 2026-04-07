@@ -1,6 +1,5 @@
 ---
 title: Confidential data and metadata
-orphan: true
 tags:
   - confidential data
   - metadata

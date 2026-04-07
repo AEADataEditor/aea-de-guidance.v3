@@ -1,6 +1,5 @@
 ---
 title: R or Stata packages (CRAN, SSC)
-orphan: true
 tags:
   - R
   - Stata

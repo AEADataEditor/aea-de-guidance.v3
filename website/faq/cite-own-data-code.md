@@ -1,6 +1,5 @@
 ---
 title: How do I cite my own data and code supplement?
-orphan: true
 tags:
   - citation
   - data deposit

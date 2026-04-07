@@ -1,6 +1,5 @@
 ---
 title: Removing PSID data from materials
-orphan: true
 tags:
   - PSID
   - restricted data

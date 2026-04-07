@@ -59,6 +59,24 @@ project:
     #- file: step-by-step.md
     #- file: _faq.md
     - file: faq.md
+      children:
+        - file: faq/doi-openicpsr-deposit.md
+        - file: faq/cite-own-data-code.md
+        - file: faq/many-data-sources-citations.md
+        - file: faq/reuse-data-licensing.md
+        - file: faq/keep-directory-structure.md
+        - file: faq/modify-repository-locked.md
+        - file: faq/update-published-repository.md
+        - file: faq/more-than-1000-files.md
+        - file: faq/macosx-folder.md
+        - file: faq/confidential-data-metadata.md
+        - file: faq/confidential-data-provide.md
+        - file: faq/psid-data-remove.md
+        - file: faq/custom-software-access.md
+        - file: faq/version-control-integration.md
+        - file: faq/r-stata-packages.md
+        - file: faq/docker-jupyter-support.md
+        - file: faq/rct-registry-alignment.md
     - file: disclaimer.md
     
     

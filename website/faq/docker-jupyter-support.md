@@ -1,6 +1,5 @@
 ---
 title: Docker / Jupyter support
-orphan: true
 tags:
   - Docker
   - Jupyter

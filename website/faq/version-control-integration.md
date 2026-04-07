@@ -1,6 +1,5 @@
 ---
 title: Version control integration (GitHub, etc.)
-orphan: true
 tags:
   - GitHub
   - version control

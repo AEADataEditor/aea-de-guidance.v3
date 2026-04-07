@@ -1,6 +1,5 @@
 ---
 title: Reusing published data and licensing
-orphan: true
 tags:
   - licensing
   - copyright

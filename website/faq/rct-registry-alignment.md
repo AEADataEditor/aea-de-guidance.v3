@@ -1,6 +1,5 @@
 ---
 title: Aligning AEA RCT Registry and Data Repository
-orphan: true
 tags:
   - RCT
   - registry

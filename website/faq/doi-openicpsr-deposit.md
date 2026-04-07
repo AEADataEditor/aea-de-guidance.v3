@@ -1,6 +1,5 @@
 ---
 title: What is the DOI of my openICPSR deposit?
-orphan: true
 tags:
   - DOI
   - openICPSR
