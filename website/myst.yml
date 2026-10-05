@@ -44,7 +44,15 @@ project:
     - title: Preparing your code for computational verification
       children:
         - file: preparing-replication-package.md
-        - file: preparing-replication-package-details.md
+          children:
+            - file: preparing-replication-package-details.md
+            - file: preparing-replication-package-step1.md
+            - file: preparing-replication-package-step2.md
+            - file: preparing-replication-package-step3.md
+            - file: preparing-replication-package-step4.md
+            - file: preparing-replication-package-step5.md
+            - file: preparing-replication-package-finalize.md
+            - file: preparing-replication-package-submit.md
     - title: Various templates
       children:
         - file: template_inquiry_about_DOI_by_editor.md

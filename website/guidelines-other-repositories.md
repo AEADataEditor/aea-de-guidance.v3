@@ -125,7 +125,7 @@ You can deduce the presumptive DOI on Codeocean from the capsule number, visible
 
 You can compute the DOI in the following way:
 
-{% include deposit-doi-codeocean.html %}
+An interactive calculator is available on the [original guidance page](https://aeadataeditor.github.io/aea-de-guidance/guidelines-other-repositories.html).
 ````
 
 ## Publishing, saving, and sharing

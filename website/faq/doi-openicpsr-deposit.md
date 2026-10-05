@@ -19,4 +19,4 @@ Then
 
 Give it a try:
 
-{% include deposit-doi.html %}
+An interactive calculator that composes the DOI and a draft citation from your project number is available in the [guidance on depositing](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea.html#citing-your-deposit).

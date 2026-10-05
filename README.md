@@ -31,7 +31,7 @@ Build the complete site:
 
 ```bash
 cd website
-python generate_faq_cards.py  # Generate FAQ cards
+python generate_faq.py  # Generate the combined FAQ page
 jupyter book build
 ```
 
@@ -39,11 +39,11 @@ Or using `myst` directly:
 
 ```bash
 cd website
-python generate_faq_cards.py  # Generate FAQ cards
+python generate_faq.py  # Generate the combined FAQ page
 myst build
 ```
 
-**Important:** Run `generate_faq_cards.py` before building to regenerate the FAQ card grid from the individual FAQ files in `faq/`.
+**Important:** Run `generate_faq.py` before building to regenerate the single-page FAQ from the individual FAQ files in `faq/`.
 
 ### Quick Build (Development)
 
@@ -69,26 +69,25 @@ website/
 
 ## Dynamic Content
 
-The FAQ landing page (`faq.md`) uses a preprocessing script to:
-- Automatically scan all files in `faq/` directory
-- Parse frontmatter (title, tags) from each FAQ
-- Generate `faq-include.md` with a responsive card grid layout
-- Update automatically when FAQ files are added/removed
+Each FAQ is a separate file in `website/faq/`, with its full question as the level-2 heading, and `title` and `tags` in the frontmatter. The FAQ landing page (`faq.md`) displays all of them on a single page, which can be searched with the site search (`Ctrl/Cmd+K`) or the browser's find function. A preprocessing script (`generate_faq.py`) does this:
+- Reads the FAQ files in the order they are listed under `faq.md` in `myst.yml` (and fails if a file in `faq/` is not listed, or vice versa)
+- Writes `faq-include.md` (not committed): a linked list of all questions, followed by each question with its tags and answer
+- Each FAQ also remains available on its own page
 
 To add a new FAQ:
 1. Create a new `.md` file in `website/faq/`
-2. Add frontmatter with `title` and `tags`
+2. Add frontmatter with `title` and `tags`, and start the body with `## The full question`
 3. Add the file to `myst.yml` under `faq.md` children
-4. Run `python generate_faq_cards.py` to regenerate cards
+4. Run `python generate_faq.py` to regenerate the combined page
 5. Rebuild the site
 
 ## Testing
 
 ### Manual Testing
-Generate FAQ cards:**
+Generate the combined FAQ page:**
    ```bash
    cd website
-   python generate_faq_cards.py
+   python generate_faq.py
    ```
 
 2. **Local build test:**
@@ -100,7 +99,7 @@ Generate FAQ cards:**
 3. **Check for errors:**
    - Look for build errors in the terminal output
    - Check `_build/html/` directory was created
-   - Verify `faq-include.md` was generated and contains card markup
+   - Verify `faq-include.md` was generated and contains all questions
 
 4. **Visual testing:**
    ```bash
@@ -108,15 +107,13 @@ Generate FAQ cards:**
    jupyter book start
    ```
    Navigate to `/faq` and verify:
-   - All FAQ cards appear
-   - Cards are clickable and link to correct pages
-   - Card layout is responsive
+   - All FAQ questions appear on the page, with a linked list at the top
 
 ### Automated Testing (CI/CD)
 
 The GitHub Actions workflow automatically:
 - Installs dependencies from `requirements.txt`
-- Run `python generate_faq_cards.py` from the `website/` directory
+- Run `python generate_faq.py` from the `website/` directory
 - Check that `faq-include.md` was generated
 - Verify FAQ files are in `website/faq/` and listed in `myst.yml`
 
@@ -124,7 +121,7 @@ The GitHub Actions workflow automatically:
 - Check YAML syntax in FAQ file frontmatter
 - Ensure all required packages are in `requirements.txt`
 - Verify frontmatter YAML is valid in all `.md` files
-- Check that `faq-include.md` contains valid MyST card syntax
+- Check that `faq-include.md` contains valid MyST syntax
 
 **Links broken:**
 - Use relative paths with `/` prefix: `/faq/page-name`
@@ -134,7 +131,7 @@ The GitHub Actions workflow automatically:
 ## AI Assistant Instructions
 
 When working with this codebase:
-- Run `python generate_faq_cards.py` before building if FAQ files changed
+- Run `python generate_faq.py` before building if FAQ files changed
 - FAQ pages must be added to both `website/faq/` AND `myst.yml` TOC
 - Use the MyST instructions file at `.github/instructions/myst.instructions.md`
 - Test builds locally before committing

@@ -5,7 +5,7 @@ toc: false
 layout: single
 ---
 
-- save  "<a href="https://raw.githubusercontent.com/{{ site.repository }}/{{ site.branch }}/_guidance/LICENSE-template.txt">LICENSE.txt</a>" as part of your deposit
+- save  "[LICENSE.txt](https://raw.githubusercontent.com/AEADataEditor/aeadataeditor.github.io/main/_guidance/LICENSE-template.txt)" as part of your deposit
 - modify the `COPYRIGHT` line.
 
 ```{include} LICENSE-template.txt

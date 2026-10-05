@@ -271,7 +271,7 @@ At present (2020), the openICPSR repository does not display the Digital Object 
 
 ````{dropdown}**Give it a try**
 
-{% include deposit-doi.html %}
+An interactive calculator that composes the DOI and a draft citation from your project number is available on the [original guidance page](https://aeadataeditor.github.io/aea-de-guidance/data-deposit-aea.html#citing-your-deposit).
 
 ````
 
