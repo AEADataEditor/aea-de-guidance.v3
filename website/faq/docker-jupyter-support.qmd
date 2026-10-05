@@ -1,0 +1,10 @@
+---
+title: "Do you support Docker/ Jupyter/ etc.?"
+categories:
+  - Docker
+  - Jupyter
+  - containers
+  - reproducibility
+---
+
+[Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#support)

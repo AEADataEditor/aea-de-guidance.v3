@@ -1,0 +1,108 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+
+website:
+  title: "Guidance by the AEA Data Editor"
+  favicon: favicon.ico
+  site-url: https://aeadataeditor.github.io/aea-de-guidance.v3/
+  repo-url: https://github.com/AEADataEditor/aea-de-guidance.v3
+  repo-subdir: website
+  repo-actions: [edit, issue]
+  page-navigation: true
+  search:
+    location: navbar
+    type: overlay
+
+  navbar:
+    background: dark
+    logo: images/logo-aea.jpg
+    logo-alt: "American Economic Association"
+    title: false
+    collapse-below: lg
+    left:
+      - text: "START REPLICATION PACKAGE"
+        href: index.qmd
+      - text: "FAQ"
+        href: faq.qmd
+    right:
+      - text: "Back to Main"
+        href: https://aeadataeditor.github.io/
+
+  sidebar:
+    style: "floating"
+    collapse-level: 1
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Step 1 - Prepare"
+        href: step-1.qmd
+        contents:
+          - preparing-for-data-deposit.qmd
+          - sharing-restricted-data.qmd
+          - Licensing_guidance.qmd
+          - LICENSE-template.qmd
+          - guidelines-other-repositories.qmd
+      - section: "Step 2 - Upload"
+        href: step-2.qmd
+        contents:
+          - data-deposit-aea.qmd
+          - sharing-openicpsr.qmd
+          - creating-datalumos-deposit.qmd
+          - creating-restricted-data-deposit-icpsr.qmd
+          - creating-restricted-data-deposit-icpsr-old.qmd
+          - creating-separate-data-deposit.qmd
+      - text: "Step 3 - Submit"
+        href: https://www.aeaweb.org/journals
+      - preparing-for-pandp.qmd
+      - next.qmd
+      - section: "Guidance on testing replicability of code"
+        contents:
+          - reproducibility-checks.qmd
+          - sample-report.qmd
+          - sample-report-3rd-1.qmd
+      - section: "Preparing your code for computational verification"
+        href: preparing-replication-package.qmd
+        contents:
+          - preparing-replication-package-details.qmd
+          - preparing-replication-package-step1.qmd
+          - preparing-replication-package-step2.qmd
+          - preparing-replication-package-step3.qmd
+          - preparing-replication-package-step4.qmd
+          - preparing-replication-package-step5.qmd
+          - preparing-replication-package-finalize.qmd
+          - preparing-replication-package-submit.qmd
+      - section: "Various templates"
+        contents:
+          - template_inquiry_about_DOI_by_editor.qmd
+          - template-ipums-api-beta.qmd
+          - third-party-request.qmd
+          - protocol-3rd-party-replication.qmd
+      - section: "Other useful information"
+        contents:
+          - replication-comment.qmd
+          - sample-language-report.qmd
+          - using_codeocean.qmd
+      - text: "Frequently Asked Questions"
+        href: faq.qmd
+      - disclaimer.qmd
+
+  page-footer:
+    left: |
+      Suggestions and comments: [Github](https://github.com/AEADataEditor/aeadataeditor.github.io/blob/main/_guidance/index.md) | [Mastodon](https://mstdn.social/@aeadata) | [Email](https://www.aeaweb.org/contact)
+    center: |
+      [Disclosures](https://aeadataeditor.github.io/disclosures.html) | [Bluesky](https://bsky.app/profile/aeadata.bsky.social) | [Mastodon](https://mstdn.social/@aeadata) | [Github](https://github.com/aeadataeditor) | [Feed](https://aeadataeditor.github.io/feed.xml)
+    right: |
+      © 2026 American Economic Association. ![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/80x15.png){fig-alt="CC BY 4.0"}
+
+format:
+  html:
+    theme:
+      light: mytheme.scss
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+    toc: true
+    toc-depth: 4
+    toc-location: right

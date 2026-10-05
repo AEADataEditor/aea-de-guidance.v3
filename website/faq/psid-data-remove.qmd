@@ -1,0 +1,9 @@
+---
+title: "I have been told by the Data Editor to remove PSID data from my submitted materials. What do I do?"
+categories:
+  - PSID
+  - restricted data
+  - data removal
+---
+
+[Moved to main FAQ](https://www.aeaweb.org/journals/data/faq#psid)
