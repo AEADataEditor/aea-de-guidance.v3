@@ -47,4 +47,4 @@ No other file needs to be changed.
 
 - Link to other pages with root-relative `.qmd` paths: `[text](/data-deposit-aea.qmd#anchor)`. Images: `/images/name.png`.
 - Collapsible sections use collapsed callouts: `::: {#id .callout-note collapse="true" icon=false title="Title"}` ... `:::`.
-- The site is deployed to GitHub Pages by `.github/workflows/quarto-publish.yml` on push to `main`.
+- The site is deployed to GitHub Pages on push to `main`; pull requests get a preview. See [README-DEPLOYMENT.md](README-DEPLOYMENT.md).
