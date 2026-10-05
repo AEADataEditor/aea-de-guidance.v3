@@ -2,6 +2,11 @@
 
 $base-color: #924046;
 
+// Light top menu (same background as the page)
+$navbar-bg: #ffffff;
+$navbar-fg: #222222;
+$navbar-hover-color: $base-color;
+
 a {
   color: $base-color;
 }

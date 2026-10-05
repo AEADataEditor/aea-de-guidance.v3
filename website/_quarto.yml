@@ -2,6 +2,8 @@ project:
   type: website
   render:
     - "*.qmd"
+  # Top menu and footer are taken from the main AEA Data Editor site
+  pre-render: scripts/sync_chrome.py
 
 website:
   title: "Guidance by the AEA Data Editor"
@@ -16,19 +18,29 @@ website:
     type: overlay
 
   navbar:
-    background: dark
+    background: light
     logo: images/logo-aea.jpg
     logo-alt: "American Economic Association"
-    title: false
+    logo-href: https://aeadataeditor.github.io/
+    title: "Office of the AEA Data Editor"
     collapse-below: lg
     left:
+      # BEGIN generated: navbar-left (scripts/sync_chrome.py)
       - text: "START REPLICATION PACKAGE"
-        href: index.qmd
+        href: "index.qmd"
       - text: "FAQ"
-        href: faq.qmd
-    right:
-      - text: "Back to Main"
-        href: https://aeadataeditor.github.io/
+        href: "faq.qmd"
+      - text: "Blog Posts"
+        href: "https://aeadataeditor.github.io/year-archive/"
+      - text: "Talks"
+        href: "https://aeadataeditor.github.io/talks/"
+      - text: "Projects"
+        href: "https://aeadataeditor.github.io/projects/"
+      - text: "Surveys"
+        href: "https://aeadataeditor.github.io/surveys/"
+      - text: "Publications"
+        href: "https://aeadataeditor.github.io/publications/"
+      # END generated: navbar-left (scripts/sync_chrome.py)
 
   sidebar:
     style: "docked"
@@ -88,13 +100,12 @@ website:
         href: faq.qmd
       - disclaimer.qmd
 
+  # BEGIN generated: page-footer (scripts/sync_chrome.py)
   page-footer:
-    left: |
-      Suggestions and comments: [Github](https://github.com/AEADataEditor/aeadataeditor.github.io/blob/main/_guidance/index.md) | [Mastodon](https://mstdn.social/@aeadata) | [Email](https://www.aeaweb.org/contact)
-    center: |
-      [Disclosures](https://aeadataeditor.github.io/disclosures.html) | [Bluesky](https://bsky.app/profile/aeadata.bsky.social) | [Mastodon](https://mstdn.social/@aeadata) | [Github](https://github.com/aeadataeditor) | [Feed](https://aeadataeditor.github.io/feed.xml)
-    right: |
-      © 2026 American Economic Association. ![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/80x15.png){fig-alt="CC BY 4.0"}
+    left: "© 2026 American Economic Association. [![CC BY 4.0](https://aeadataeditor.github.io/images/ccby80x15.png){fig-alt=\"CC BY 4.0\"}](https://creativecommons.org/licenses/by/4.0/)"
+    center: "[Disclosures](https://aeadataeditor.github.io/disclosures.html) | [Bluesky](https://bsky.app/profile/aeadata.bsky.social) | [Mastodon](https://mstdn.social/@aeadata) | [GitHub](https://github.com/aeadataeditor) | [Feed](https://aeadataeditor.github.io/feed.xml)"
+    right: "Suggestions and comments: [GitHub](https://github.com/AEADataEditor/aea-de-guidance.v3/issues) | [Email](https://www.aeaweb.org/contact)"
+  # END generated: page-footer (scripts/sync_chrome.py)
 
 format:
   html:
@@ -109,7 +120,7 @@ format:
     # Page grid: ~1000px text column (body-width excludes padding), ~200px side columns; Quarto narrows these
     # automatically on smaller screens.
     grid:
-      sidebar-width: 220px
+      sidebar-width: 360px
       body-width: 850px
       margin-width: 250px
       gutter-width: 1.5rem

@@ -3,3 +3,7 @@
 .card .card-body img { margin-bottom: .5rem; }
 .card-header { font-size: 1.1rem; }
 blockquote { word-wrap: break-word; overflow-wrap: break-word; }
+
+/* Light navbar, separated from the page by a thin rule */
+#quarto-header .navbar { border-bottom: 1px solid #dee2e6; }
+#quarto-header .navbar .navbar-title { font-weight: 600; }
