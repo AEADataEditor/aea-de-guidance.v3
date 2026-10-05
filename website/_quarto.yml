@@ -31,7 +31,7 @@ website:
         href: https://aeadataeditor.github.io/
 
   sidebar:
-    style: "floating"
+    style: "docked"
     collapse-level: 1
     contents:
       - text: "Home"
@@ -106,3 +106,10 @@ format:
     toc: true
     toc-depth: 4
     toc-location: right
+    # Page grid: ~1000px text column (body-width excludes padding), ~200px side columns; Quarto narrows these
+    # automatically on smaller screens.
+    grid:
+      sidebar-width: 220px
+      body-width: 850px
+      margin-width: 250px
+      gutter-width: 1.5rem
