@@ -43,6 +43,7 @@ website:
       # END generated: navbar-left (scripts/sync_chrome.py)
 
   sidebar:
+    id: main
     style: "docked"
     collapse-level: 1
     contents:
@@ -54,7 +55,6 @@ website:
           - preparing-for-data-deposit.qmd
           - sharing-restricted-data.qmd
           - Licensing_guidance.qmd
-          - LICENSE-template.qmd
           - guidelines-other-repositories.qmd
       - section: "Step 2 - Upload"
         href: step-2.qmd
@@ -68,7 +68,6 @@ website:
       - text: "Step 3 - Submit"
         href: https://www.aeaweb.org/journals
       - preparing-for-pandp.qmd
-      - next.qmd
       - section: "Guidance on testing replicability of code"
         contents:
           - reproducibility-checks.qmd
@@ -94,8 +93,8 @@ website:
       - section: "Other useful information"
         contents:
           - replication-comment.qmd
-          - sample-language-report.qmd
           - using_codeocean.qmd
+          - LICENSE-template.qmd
       - text: "Frequently Asked Questions"
         href: faq.qmd
       - disclaimer.qmd
