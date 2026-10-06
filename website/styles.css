@@ -1,0 +1,16 @@
+/* AEA Data Editor guidance */
+.callout.callout-style-default .callout-header { cursor: pointer; }
+.card .card-body img { margin-bottom: .5rem; }
+.card-header { font-size: 1.1rem; }
+blockquote { word-wrap: break-word; overflow-wrap: break-word; }
+
+/* Light navbar, separated from the page by a thin rule */
+#quarto-header .navbar { border-bottom: 1px solid #dee2e6; }
+#quarto-header .navbar .navbar-title { font-weight: 600; }
+
+/* Space between consecutive card rows */
+.quarto-container .grid + .grid { margin-top: 1.5rem; }
+.quarto-container .grid { margin-bottom: 1.5rem; }
+
+/* Footer license badge: as high as the surrounding text */
+.nav-footer img { height: 1em; width: auto; max-height: 1em; vertical-align: text-bottom; }

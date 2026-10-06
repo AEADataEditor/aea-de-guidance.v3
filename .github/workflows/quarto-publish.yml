@@ -1,0 +1,129 @@
+# Build the Quarto site, and (conditionally) publish it.
+#
+# The site is always built - on pushes to main, on pull requests, and on
+# manual runs - and the rendered site is uploaded as a downloadable workflow
+# artifact named "site". Publishing to GitHub Pages only happens on pushes to
+# main, or on a manual run with "deploy" set to true. Pull requests from
+# branches of this repository (not forks) additionally get a live preview
+# deployed to Cloudflare Pages, with the link posted as a PR comment. See
+# README-DEPLOYMENT.md for the one-time Cloudflare setup.
+
+name: Build website
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: 'Deploy to GitHub Pages'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+# Allow only one concurrent production deployment, without cancelling one in progress.
+concurrency:
+  group: 'pages-${{ github.event_name }}-${{ github.ref }}'
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  # Cloudflare Pages project used for PR previews (see README-DEPLOYMENT.md)
+  PREVIEW_PROJECT: aea-de-guidance-v3
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Point site-url at the PR preview
+        if: github.event_name == 'pull_request'
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # Absolute links (site-url) must point at the preview deployment, not
+          # at production. The alias matches the --branch=pr-<number> used by
+          # the preview job.
+          sed -i "s#^\(\s*site-url:\).*#\1 https://pr-${PR_NUMBER}.${PREVIEW_PROJECT}.pages.dev/#" website/_quarto.yml
+          grep site-url website/_quarto.yml
+
+      - name: Render site
+        run: quarto render website
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: website/_site
+          retention-days: 14
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './website/_site'
+
+  deploy:
+    needs: build
+    # Deploy on push to main, or on manual trigger when deploy=true
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' && inputs.deploy == 'true')
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
+
+  preview:
+    needs: build
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write     # only for the PR comment
+    steps:
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+      - name: Deploy PR preview
+        id: preview
+        # Forked PRs cannot read secrets, and handing a deploy token to
+        # unreviewed code is a bad trade for a preview.
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: >-
+            pages deploy ./_site
+            --project-name=${{ env.PREVIEW_PROJECT }}
+            --branch=pr-${{ github.event.pull_request.number }}
+      - name: Publish preview link
+        if: steps.preview.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          URL: ${{ steps.preview.outputs.pages-deployment-alias-url }}
+        run: |
+          echo "📖 Preview: $URL" >> "$GITHUB_STEP_SUMMARY"
+          gh pr comment "$PR" --repo "$REPO" --edit-last --create-if-none \
+            --body "📖 **Preview:** $URL — commit \`${GITHUB_SHA:0:7}\`"

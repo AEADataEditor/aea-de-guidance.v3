@@ -1,157 +1,62 @@
 # Developing this site
 
-This site uses MyST (Markedly Structured Text) via Jupyter Book to build documentation with dynamic content.
+This site is built with [Quarto](https://quarto.org/) (as is the [Social Science Data Editors guidance](https://social-science-data-editors.github.io/guidance/)). It mirrors the `_guidance` section of [aeadataeditor.github.io](https://github.com/AEADataEditor/aeadataeditor.github.io).
 
 ## Setup
 
-Create a Python environment and install the dependencies:
+Install [Quarto](https://quarto.org/docs/get-started/) (or `pip install quarto-cli`).
+
+## Building the site
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+quarto preview website   # live development server
+quarto render website    # static HTML in website/_site/
 ```
 
-## Building the Site
-
-### Development Server
-
-Run the live development server (auto-rebuilds on file changes):
-
-```bash
-cd website
-jupyter book start
-```
-
-The site will be available at `http://localhost:3000`.
-
-### Build Static HTML
-
-Build the complete site:
-
-```bash
-cd website
-python generate_faq_cards.py  # Generate FAQ cards
-jupyter book build
-```
-
-Or using `myst` directly:
-
-```bash
-cd website
-python generate_faq_cards.py  # Generate FAQ cards
-myst build
-```
-
-**Important:** Run `generate_faq_cards.py` before building to regenerate the FAQ card grid from the individual FAQ files in `faq/`.
-
-### Quick Build (Development)
-
-For faster builds during development (if you haven't changed FAQ content):
-
-```bash
-cd website
-jupyter book build
-```
-
-## Project Structure
+## Project structure
 
 ```
 website/
-├── myst.yml              # MyST configuration and table of contents
-├── *.md                  # Main content pages
-├── faq/                  # Individual FAQ pages (auto-listed)
-│   └── *.md
-├── images/               # Static assets
-└── _build/               # Generated output (not committed)
-    └── html/
+├── _quarto.yml     # navbar, sidebar (table of contents), footer, theme
+├── *.qmd           # content pages
+├── faq.qmd         # FAQ landing page: searchable grid listing of faq/*.qmd
+├── faq/*.qmd       # one file per FAQ
+├── images/         # static images
+├── scripts/sync_chrome.py  # pre-render: top menu + footer from the main site
+├── mytheme.scss, styles.css
+└── _site/          # generated output (not committed)
 ```
 
-## Dynamic Content
+New pages must be added to the `sidebar` in `_quarto.yml`.
 
-The FAQ landing page (`faq.md`) uses a preprocessing script to:
-- Automatically scan all files in `faq/` directory
-- Parse frontmatter (title, tags) from each FAQ
-- Generate `faq-include.md` with a responsive card grid layout
-- Update automatically when FAQ files are added/removed
+## Top menu and footer
 
-To add a new FAQ:
-1. Create a new `.md` file in `website/faq/`
-2. Add frontmatter with `title` and `tags`
-3. Add the file to `myst.yml` under `faq.md` children
-4. Run `python generate_faq_cards.py` to regenerate cards
-5. Rebuild the site
+The top menu and the footer are kept consistent with the main site
+([aeadataeditor.github.io](https://github.com/AEADataEditor/aeadataeditor.github.io)).
+`website/scripts/sync_chrome.py` runs automatically as a Quarto `pre-render` step. It reads
+`_data/navigation.yml` and `_config.yml` from the `main` branch of that repository and rewrites the
+blocks between the `# BEGIN generated` / `# END generated` markers in `website/_quarto.yml`
+(links to the old `/aea-de-guidance/` subsite are mapped to this site's pages). If the main site
+cannot be reached, `_quarto.yml` is left as it is. Commit the updated `_quarto.yml` when it changes.
+Use `--source DIR` to read from a local checkout instead.
 
-## Testing
+## FAQ
 
-### Manual Testing
-Generate FAQ cards:**
-   ```bash
-   cd website
-   python generate_faq_cards.py
-   ```
+Each FAQ is a separate file in `website/faq/`. The full question is the `title`; `categories` are keywords. `faq.qmd` displays all FAQs on one page as a grid, with a filter box (searches titles and categories) and a category list. To add a FAQ, simply add a new `.qmd` file to `website/faq/`:
 
-2. **Local build test:**
-   ```bash
-   cd website
-   jupyter book build
-   ```
+```yaml
+---
+title: "The full question?"
+categories: [keyword one, keyword two]
+---
 
-3. **Check for errors:**
-   - Look for build errors in the terminal output
-   - Check `_build/html/` directory was created
-   - Verify `faq-include.md` was generated and contains card markup
+Answer.
+```
 
-4. **Visual testing:**
-   ```bash
-   cd website
-   jupyter book start
-   ```
-   Navigate to `/faq` and verify:
-   - All FAQ cards appear
-   - Cards are clickable and link to correct pages
-   - Card layout is responsive
+No other file needs to be changed.
 
-### Automated Testing (CI/CD)
+## Conventions
 
-The GitHub Actions workflow automatically:
-- Installs dependencies from `requirements.txt`
-- Run `python generate_faq_cards.py` from the `website/` directory
-- Check that `faq-include.md` was generated
-- Verify FAQ files are in `website/faq/` and listed in `myst.yml`
-
-**Build errors:**
-- Check YAML syntax in FAQ file frontmatter
-- Ensure all required packages are in `requirements.txt`
-- Verify frontmatter YAML is valid in all `.md` files
-- Check that `faq-include.md` contains valid MyST card syntax
-
-**Links broken:**
-- Use relative paths with `/` prefix: `/faq/page-name`
-- Match filenames exactly (case-sensitive)
-- Check TOC entries in `myst.yml`
-
-## AI Assistant Instructions
-
-When working with this codebase:
-- Run `python generate_faq_cards.py` before building if FAQ files changed
-- FAQ pages must be added to both `website/faq/` AND `myst.yml` TOC
-- Use the MyST instructions file at `.github/instructions/myst.instructions.md`
-- Test builds locally before committing
-- Verify the GitHub Actions workflow passes
-- The preprocessing script must be run before each build when FAQ content chang
-## AI Assistant Instructions
-
-When working with this codebase:
-- Always build with `--execute` flag when FAQ or dynamic content changes
-- FAQ pages must be added to both `website/faq/` AND `myst.yml` TOC
-- Use the MyST instructions file at `.github/instructions/myst.instructions.md`
-- Test builds locally before committing
-- Verify the GitHub Actions workflow passes
-
-## Additional Resources
-
-- [MyST Documentation](https://mystmd.org/guide)
-- [Jupyter Book Documentation](https://jupyterbook.org/)
-- [MyST Instructions](.github/instructions/myst.instructions.md)
-
+- Link to other pages with root-relative `.qmd` paths: `[text](/data-deposit-aea.qmd#anchor)`. Images: `/images/name.png`.
+- Collapsible sections use collapsed callouts: `::: {#id .callout-note collapse="true" icon=false title="Title"}` ... `:::`.
+- The site is deployed to GitHub Pages on push to `main`; pull requests get a preview. See [README-DEPLOYMENT.md](README-DEPLOYMENT.md).

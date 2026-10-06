@@ -1,0 +1,108 @@
+---
+title: "Guidance by the AEA Data Editor"
+toc: false
+---
+
+The following steps outline what you should expect after conditional acceptance of your manuscript, in compliance with the [AEA Data and Code Availability Policy](https://www.aeaweb.org/journals/policies/data-code). Note that the AEA's Data and Code Availability Policy is compatible with ![Link to DCAS Icon](https://datacodestandard.org/assets/img/DCAS-1.0.png){fig-alt="DCAS icon" height=24px} the [Data and Code Availability Standard](https://datacodestandard.org/) v1.0.
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Prepare**
+:::
+::: {.card-body}
+![](/images/noun_One_2010363.png){fig-alt="1" width=80px}
+
+Prepare your data and code replication package (including data citations and provenance information). You can do this at any time, even before submitting to the AEA journals.
+:::
+::: {.card-footer}
+[**Start** »](/step-1.qmd){.stretched-link}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Upload**
+:::
+::: {.card-body}
+![](/images/noun_two_2010370.png){fig-alt="2" width=80px}
+
+Provide metadata and upload the replication package. This step simultaneously prepares the materials for the verification process as well as for subsequent publication.
+:::
+::: {.card-footer}
+[**Start to upload** »](/step-2.qmd){.stretched-link}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Submit**
+:::
+::: {.card-body}
+![](/images/noun_three_2010367.png){fig-alt="3" width=80px}
+
+Submit the [Data and Code Availability Form](https://www.aeaweb.org/journals/forms/data-code-availability) together with your manuscript native files as instructed, and as per guidelines at your journal (for example, [AER guidelines](https://www.aeaweb.org/journals/aer/submissions/accepted-articles/styleguide)). Only once these materials have been received by the editorial office are [verification checks started](/next.qmd).
+:::
+::: {.card-footer}
+[**Ready to submit** »](https://www.aeaweb.org/journals/){.stretched-link}
+:::
+:::
+:::
+
+:::
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**P&P**
+:::
+::: {.card-body}
+![](/images/noun-conference-5995416.png){fig-alt="C" width=80px}
+
+The same rules apply to the replication packages for papers published in [Papers and Proceedings](https://www.aeaweb.org/journals/pandp). But here's a quick checklist.
+:::
+::: {.card-footer}
+[**View** »](/preparing-for-pandp.qmd){.stretched-link}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**What to expect after deposit**
+:::
+::: {.card-body}
+![](/images/noun-next-7292535.png){fig-alt="Next" width=80px}
+
+The next steps happen behind the scenes, until you receive the replication report.
+:::
+::: {.card-footer}
+[**Next steps** »](/next.qmd){.stretched-link}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Approximate process flow**
+:::
+::: {.card-body}
+![](/images/noun-settings-3836219.png){fig-alt="X" width=80px}
+:::
+::: {.card-footer}
+[**Bigger** »](/images/mermaid-diagram-20200713113652.png){.stretched-link}
+:::
+:::
+:::
+
+:::

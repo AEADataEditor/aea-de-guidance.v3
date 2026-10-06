@@ -1,0 +1,21 @@
+---
+title: "Frequently Asked Questions"
+aliases:
+  - /faq
+listing:
+  id: faq-listing
+  contents: faq/*.qmd
+  type: grid
+  categories: true
+  fields: [title, categories]
+  filter-ui: [title, categories]
+  sort: "title"
+  page-size: 100
+---
+
+... although some are not frequently asked, but might nevertheless be useful. Please be sure to check out the [official list of FAQ](https://www.aeaweb.org/journals/data/faq) first. Should you have other questions not appearing on either page, please [create a new issue on Github](https://github.com/AEADataEditor/aea-de-guidance/issues/new), ask the question on [BlueSky](https://bsky.app/profile/aeadata.bsky.social), or send an email to the [AEA Data Editor](mailto:dataeditor@aeapubs.org).
+
+Use the box below to search the questions, or click on a category to narrow the list.
+
+::: {#faq-listing}
+:::

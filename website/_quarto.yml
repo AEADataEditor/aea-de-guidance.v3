@@ -1,0 +1,125 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+  # Top menu and footer are taken from the main AEA Data Editor site
+  pre-render: scripts/sync_chrome.py
+
+website:
+  title: "Guidance by the AEA Data Editor"
+  favicon: favicon.ico
+  site-url: https://aeadataeditor.github.io/aea-de-guidance.v3/
+  repo-url: https://github.com/AEADataEditor/aea-de-guidance.v3
+  repo-subdir: website
+  repo-actions: [edit, issue]
+  page-navigation: true
+  search:
+    location: navbar
+    type: overlay
+
+  navbar:
+    background: light
+    logo: images/logo-aea.jpg
+    logo-alt: "American Economic Association"
+    logo-href: https://aeadataeditor.github.io/
+    title: "Office of the AEA Data Editor"
+    collapse-below: lg
+    left:
+      # BEGIN generated: navbar-left (scripts/sync_chrome.py)
+      - text: "START REPLICATION PACKAGE"
+        href: "index.qmd"
+      - text: "FAQ"
+        href: "faq.qmd"
+      - text: "Blog Posts"
+        href: "https://aeadataeditor.github.io/year-archive/"
+      - text: "Talks"
+        href: "https://aeadataeditor.github.io/talks/"
+      - text: "Projects"
+        href: "https://aeadataeditor.github.io/projects/"
+      - text: "Surveys"
+        href: "https://aeadataeditor.github.io/surveys/"
+      - text: "Publications"
+        href: "https://aeadataeditor.github.io/publications/"
+      # END generated: navbar-left (scripts/sync_chrome.py)
+
+  sidebar:
+    id: main
+    style: "docked"
+    collapse-level: 1
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - section: "Step 1 - Prepare"
+        href: step-1.qmd
+        contents:
+          - preparing-for-data-deposit.qmd
+          - sharing-restricted-data.qmd
+          - Licensing_guidance.qmd
+          - guidelines-other-repositories.qmd
+      - section: "Step 2 - Upload"
+        href: step-2.qmd
+        contents:
+          - data-deposit-aea.qmd
+          - sharing-openicpsr.qmd
+          - creating-datalumos-deposit.qmd
+          - creating-restricted-data-deposit-icpsr.qmd
+          - creating-restricted-data-deposit-icpsr-old.qmd
+          - creating-separate-data-deposit.qmd
+      - text: "Step 3 - Submit"
+        href: https://www.aeaweb.org/journals
+      - preparing-for-pandp.qmd
+      - section: "Guidance on testing replicability of code"
+        contents:
+          - reproducibility-checks.qmd
+          - sample-report.qmd
+          - sample-report-3rd-1.qmd
+      - section: "Preparing your code for computational verification"
+        href: preparing-replication-package.qmd
+        contents:
+          - preparing-replication-package-details.qmd
+          - preparing-replication-package-step1.qmd
+          - preparing-replication-package-step2.qmd
+          - preparing-replication-package-step3.qmd
+          - preparing-replication-package-step4.qmd
+          - preparing-replication-package-step5.qmd
+          - preparing-replication-package-finalize.qmd
+          - preparing-replication-package-submit.qmd
+      - section: "Various templates"
+        contents:
+          - template_inquiry_about_DOI_by_editor.qmd
+          - template-ipums-api-beta.qmd
+          - third-party-request.qmd
+          - protocol-3rd-party-replication.qmd
+      - section: "Other useful information"
+        contents:
+          - replication-comment.qmd
+          - using_codeocean.qmd
+          - LICENSE-template.qmd
+      - text: "Frequently Asked Questions"
+        href: faq.qmd
+      - disclaimer.qmd
+
+  # BEGIN generated: page-footer (scripts/sync_chrome.py)
+  page-footer:
+    left: "© 2026 American Economic Association. [![CC BY 4.0](https://aeadataeditor.github.io/images/ccby80x15.png){fig-alt=\"CC BY 4.0\"}](https://creativecommons.org/licenses/by/4.0/)"
+    center: "[Disclosures](https://aeadataeditor.github.io/disclosures.html) | [Bluesky](https://bsky.app/profile/aeadata.bsky.social) | [Mastodon](https://mstdn.social/@aeadata) | [GitHub](https://github.com/aeadataeditor) | [Feed](https://aeadataeditor.github.io/feed.xml)"
+    right: "Suggestions and comments: [GitHub](https://github.com/AEADataEditor/aea-de-guidance.v3/issues) | [Email](https://www.aeaweb.org/contact)"
+  # END generated: page-footer (scripts/sync_chrome.py)
+
+format:
+  html:
+    theme:
+      light: mytheme.scss
+    code-copy: true
+    code-overflow: wrap
+    css: styles.css
+    toc: true
+    toc-depth: 4
+    toc-location: right
+    # Page grid: ~1000px text column (body-width excludes padding), ~200px side columns; Quarto narrows these
+    # automatically on smaller screens.
+    grid:
+      sidebar-width: 360px
+      body-width: 850px
+      margin-width: 250px
+      gutter-width: 1.5rem
