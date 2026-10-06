@@ -2,11 +2,51 @@
 title: What to expect next
 ---
 
-| Assignment | Verification | Forthcoming |
-|------------|-------------|-------------|
-| ![Assignment](/images/noun_Four_2010371.png) | ![Verification](/images/noun_five_2010369.png) | ![Forthcoming](/images/noun_Check_3836232.png) |
-| The editorial office assigns the manuscript to the AEA Data Editor, using the "ScholarOne" (ex-Manuscript Central) system. | The AEA Data Editor team downloads materials from openICPSR, [conducts reproducibility checks](https://social-science-data-editors.github.io/guidance/Verification_guidance.html), and then writes a [report](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). **This happens without interaction with the authors.** If changes need to be made, the report is communicated to the authors, who make changes and re-submit, the cycle repeating until the replication package is deemed acceptable. | The acceptance report (possibly with some minor additional changes) is communicated to the editorial office and the Editor of the journal. This starts the copy-editing process, and at this time, the manuscript becomes "**forthcoming**." Small changes can still be incorporated at this stage. As soon as the replication package is completed, it is published. The manuscript is published once copy-edited and scheduled to an issue. |
-|  | [Learn more](/reproducibility-checks.qmd) |
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Assignment**
+:::
+::: {.card-body}
+![](/images/noun_Four_2010371.png){fig-alt="Assignment" width=80px}
+
+The editorial office assigns the manuscript to the AEA Data Editor, using the "ScholarOne" (ex-Manuscript Central) system.
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Verification**
+:::
+::: {.card-body}
+![](/images/noun_five_2010369.png){fig-alt="Verification" width=80px}
+
+The AEA Data Editor team downloads materials from openICPSR, [conducts reproducibility checks](https://social-science-data-editors.github.io/guidance/Verification_guidance.html), and then writes a [report](https://github.com/AEADataEditor/replication-template/blob/master/REPLICATION.md). **This happens without interaction with the authors.** If changes need to be made, the report is communicated to the authors, who make changes and re-submit, the cycle repeating until the replication package is deemed acceptable.
+:::
+::: {.card-footer}
+[**Learn more »**](/reproducibility-checks.qmd){.stretched-link}
+:::
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.card .h-100 .text-center}
+::: {.card-header}
+**Forthcoming**
+:::
+::: {.card-body}
+![](/images/noun_Check_3836232.png){fig-alt="Forthcoming" width=80px}
+
+The acceptance report (possibly with some minor additional changes) is communicated to the editorial office and the Editor of the journal. This starts the copy-editing process, and at this time, the manuscript becomes "**forthcoming**." Small changes can still be incorporated at this stage. As soon as the replication package is completed, it is published. The manuscript is published once copy-edited and scheduled to an issue.
+:::
+:::
+:::
+
+:::
 
 ---
 
